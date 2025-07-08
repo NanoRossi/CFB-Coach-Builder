@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./CoachSkillTree.css";
+import PreorderToggle from "./PreorderToggle";
 import skillData from './skills.json';
 import { Radar } from "react-chartjs-2";
 import {
@@ -12,6 +13,7 @@ import {
   Legend,
 } from "chart.js";
 import PunchCardExport from "./PunchCardExport";
+import * as React from 'react';
 
 // Register chart.js components
 ChartJS.register(
@@ -24,14 +26,30 @@ ChartJS.register(
 );
 
 export default function CoachSkillTree() {
-  const maxSkillPoints = 495;
+
+  const initialBase = 1000;
+  const preorderBonusSkillPoints = 100;
+  const [baseValue, setBaseValue] = useState(initialBase);
+  const [deductions, setDeductions] = useState([]); 
+  const [isPreorderEnabled, setIsPreorderEnabled] = useState(false);
+
+  // Calculate total deductions
+  const totalDeductions = deductions.reduce((acc, val) => acc + val, 0);
+
+  // Final available skill points
+  const availableSkillPoints = baseValue + totalDeductions + (isPreorderEnabled ? preorderBonusSkillPoints : 0);
+
   const [allocatedPoints, setAllocatedPoints] = useState({});
-  const [skillPoints, setSkillPoints] = useState(maxSkillPoints);
+  //const [skillPoints, setSkillPoints] = useState(availableSkillPoints);
   const [unlockedTiers, setUnlockedTiers] = useState({});
   const [unlockedTrees, setUnlockedTrees] = useState([]);
   const [startingTree, setStartingTree] = useState("");
   const [expandedTree, setExandedTrees] = useState({});
   const [pointsPerTree, setPointsPerTree] = useState({}); // Tracks total points spent in each tree
+
+  const handleToggle = (enabled) => {
+    setIsPreorderEnabled(enabled);
+  };
 
   useEffect(() => {
     if (startingTree) {
@@ -63,14 +81,14 @@ export default function CoachSkillTree() {
     }
 
     // Check if the user has enough points
-    if (skillPoints < totalCost) {
+    if (availableSkillPoints < totalCost) {
       alert("You don't have enough points to allocate this skill.");
       return;
     }
 
     // Update state
     setAllocatedPoints(newAllocatedPoints);
-    setSkillPoints((prevPoints) => prevPoints - totalCost);
+    setDeductions(prev => [...prev, -Math.abs(totalCost)]);
 
     setPointsPerTree((prev) => ({
       ...prev,
@@ -95,8 +113,6 @@ export default function CoachSkillTree() {
 
     let totalPointsRemoved = skill.cost;
     let updatedAllocatedPoints = { ...allocatedPoints };
-    let updatedSkillPoints = skillPoints + skill.cost;
-
     delete updatedAllocatedPoints[key];
 
     const currentTier = skill.tier;
@@ -108,7 +124,6 @@ export default function CoachSkillTree() {
 
       if (nextSkill.tier > currentTier && allocatedPoints[nextKey]) {
         totalPointsRemoved += nextSkill.cost;
-        updatedSkillPoints += nextSkill.cost;
         delete updatedAllocatedPoints[nextKey];
       } else {
         break;
@@ -116,7 +131,7 @@ export default function CoachSkillTree() {
     }
 
     setAllocatedPoints(updatedAllocatedPoints);
-    setSkillPoints(updatedSkillPoints);
+    setDeductions(prev => [...prev, Math.abs(totalPointsRemoved)]);
     setPointsPerTree((prev) => ({
       ...prev,
       [treeId]: Math.max((prev[treeId] || 0) - totalPointsRemoved, 0),
@@ -167,9 +182,9 @@ export default function CoachSkillTree() {
 
     const unlockCost = unlockedTrees.length === 0 ? 0 : tree.treeUnlockCost;
 
-    if (skillPoints >= unlockCost && !unlockedTrees.includes(treeId)) {
+    if (availableSkillPoints >= unlockCost && !unlockedTrees.includes(treeId)) {
       setUnlockedTrees((prev) => [...prev, treeId]);
-      setSkillPoints((prevPoints) => prevPoints - unlockCost);
+      setDeductions(prev => [...prev, -Math.abs(unlockCost)]);
     }
   };
 
@@ -308,8 +323,9 @@ export default function CoachSkillTree() {
         <h1>Coach Planner</h1>
       </div>
 
-      <div className="skill-points">Available Skill Points: {skillPoints}</div>
-
+      <div className="skill-points">Available Skill Points: {availableSkillPoints}</div>
+      <div className="skill-points">Toggle Preorder Bonus: <PreorderToggle checked={isPreorderEnabled} onChange={handleToggle} /></div>
+ 
       <div className="starting-tree">
         <label>Select Starting Tree:</label>
         <select value={startingTree} onChange={(e) => setStartingTree(e.target.value)}>
@@ -401,7 +417,7 @@ export default function CoachSkillTree() {
                             onClick={() => allocateSkill(treeId, categoryIndex, skillIndex)}
                             disabled={
                               allocatedPoints[`${treeId}-${categoryIndex}-${skillIndex}`] ||
-                              skillPoints < skill.cost
+                              availableSkillPoints < skill.cost
                             }
                             className="add-skill-button"
                           >
@@ -426,7 +442,7 @@ export default function CoachSkillTree() {
       </div>
       <br />
 
-      <PunchCardExport unlockedTiers={unlockedTiers} skillPoints={skillPoints} />
+      <PunchCardExport unlockedTiers={unlockedTiers} skillPoints={availableSkillPoints} />
     </div>
   );
 }
