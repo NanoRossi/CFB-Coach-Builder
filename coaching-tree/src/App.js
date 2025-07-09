@@ -40,12 +40,20 @@ export default function CoachSkillTree() {
   const availableSkillPoints = baseValue + totalDeductions + (isPreorderEnabled ? preorderBonusSkillPoints : 0);
 
   const [allocatedPoints, setAllocatedPoints] = useState({});
-  //const [skillPoints, setSkillPoints] = useState(availableSkillPoints);
   const [unlockedTiers, setUnlockedTiers] = useState({});
   const [unlockedTrees, setUnlockedTrees] = useState([]);
-  const [startingTree, setStartingTree] = useState("");
+  const [startingTree, setStartingTree] = useState("Motivator"); // Default starting tree
   const [expandedTree, setExandedTrees] = useState({});
   const [pointsPerTree, setPointsPerTree] = useState({}); // Tracks total points spent in each tree
+
+  const [baseTreeCosts, setBaseTreeCosts] = useState([0, 20, 30]);
+  const [baseIndex, setBaseIndex] = useState(1);
+
+  const [advancedTreeCosts, setAdvancedTreeCosts] = useState([20, 25, 30]);
+  const [advancedIndex, setAdvancedIndex] = useState(0);
+
+  const [crossoverTreeCosts, setCrossoverTreeCosts] = useState([30, 35, 40]);
+  const [crossoverIndex, setCrossoverIndex] = useState(0);
 
   const handleToggle = (enabled) => {
     setIsPreorderEnabled(enabled);
@@ -54,10 +62,10 @@ export default function CoachSkillTree() {
   useEffect(() => {
     if (startingTree) {
       setUnlockedTrees([startingTree]);
-      setUnlockedTiers((prev) => ({
+      /*setUnlockedTiers((prev) => ({
         ...prev,
         [startingTree]: { [0]: 1 },
-      }));
+      }));*/
     }
   }, [startingTree]);
 
@@ -137,14 +145,48 @@ export default function CoachSkillTree() {
       [treeId]: Math.max((prev[treeId] || 0) - totalPointsRemoved, 0),
     }));
 
-    setUnlockedTiers((prev) => {
-      const updatedTiers = { ...prev };
-      if (updatedTiers[treeId] && updatedTiers[treeId][categoryIndex] > currentTier) {
-        updatedTiers[treeId][categoryIndex] = currentTier;
-      }
-      return updatedTiers;
-    });
+
+    if (skillIndex === 0) 
+    { 
+      // If the first skill in the category is deallocated, we need to reset the tier for that category
+      setUnlockedTiers((prev) => {
+        const updatedTiers = { ...prev };
+        delete updatedTiers[treeId][categoryIndex];
+      
+        if (Object.keys(updatedTiers[treeId]).length === 0) {
+          delete updatedTiers[treeId]; // Remove the tree entry if no categories are left
+        }
+
+        return updatedTiers;
+      });
+
+    }
+    else
+    { 
+      setUnlockedTiers((prev) => {
+        const updatedTiers = { ...prev };
+        if (updatedTiers[treeId] && updatedTiers[treeId][categoryIndex] > currentTier) {
+          updatedTiers[treeId][categoryIndex] = currentTier;
+        }
+        return updatedTiers;
+      });
+    }
   };
+
+  const getTreeCost = (tree) => {
+      // standard trees have dynamic cost based upon how many of that type of tree you have unlocked
+      let unlockCost = tree.type === "basic" ? baseTreeCosts[baseIndex] :
+      tree.type === "advanced" ? advancedTreeCosts[advancedIndex] :
+      tree.type === "crossover" ? crossoverTreeCosts[crossoverIndex] : 0;
+  
+      // elite trees have a fixed cost
+      if (tree.type === "elite")
+      {
+        unlockCost = tree.treeUnlockCost;
+      }
+
+      return unlockCost;
+  }
 
   const unlockTree = (treeId) => {
     const tree = skillData[treeId];
@@ -180,11 +222,21 @@ export default function CoachSkillTree() {
       }
     }
 
-    const unlockCost = unlockedTrees.length === 0 ? 0 : tree.treeUnlockCost;
+    let unlockCost = getTreeCost(tree);
 
     if (availableSkillPoints >= unlockCost && !unlockedTrees.includes(treeId)) {
       setUnlockedTrees((prev) => [...prev, treeId]);
       setDeductions(prev => [...prev, -Math.abs(unlockCost)]);
+
+      if (tree.type === "basic") {
+        setBaseIndex((prev) => (prev + 1));
+      }
+      else if (tree.type === "advanced") {
+        setAdvancedIndex((prev) => (prev + 1));
+      }
+      else if (tree.type === "crossover") {
+        setCrossoverIndex((prev) => (prev + 1));
+      }
     }
   };
 
@@ -316,7 +368,7 @@ export default function CoachSkillTree() {
   return (
     <div className="coach-skill-tree">
       <div className="header">
-        <img src={"./header.png"} />
+        <img src={"./26header.jpeg"} />
       </div>
 
       <div className="title">
@@ -402,7 +454,7 @@ export default function CoachSkillTree() {
                 onClick={() => unlockTree(treeId)}
                 disabled={unlockedTrees.includes(treeId)}
               >
-                Unlock Tree (Cost: {startingTree === treeId ? 0 : tree.treeUnlockCost} Points)
+                Unlock Tree (Cost: {startingTree === treeId ? 0 : getTreeCost(tree)} Points)
               </button>
 
               {unlockedTrees.includes(treeId) && expandedTree[treeId] && (
