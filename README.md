@@ -1,5 +1,5 @@
 ## What is this?
-A tool built for players of EA Sports College Football 25 to plan out how they intend to build their coaches.
+A tool built for players of EA Sports College Football 26 to plan out how they intend to build their coaches.
 
 Driven by the skills.json file to determine costs and requirements for each skill tree, this is customisable for future/other games.
 
@@ -24,4 +24,7 @@ You may also see any lint errors in the console.
 
 ### npm 'run build'
 Builds the app for production to the build folder.
-Note: I have not and do not intend to actually deploy this anywhere
+
+
+You can find this project online at:
+### https://nanorossi.itch.io/cfb26coachplanner
