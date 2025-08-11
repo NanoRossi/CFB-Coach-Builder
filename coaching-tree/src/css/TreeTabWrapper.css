@@ -1,0 +1,38 @@
+.tabs-header {
+  display: flex;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.tabs-header button {
+  background: rgba(0, 0, 0, 0.05);
+  color: #222;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.tabs-header button:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.tabs-header button.active {
+  background: linear-gradient(90deg, #3b82f6, #1e40af);
+  color: white;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+}
+
+.tabs-content {
+  background: #f9fafb; /* very light grey */
+  padding: 20px;
+  border-radius: 8px;
+  color: #222;
+  min-height: 200px; /* adjust as needed */
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+}

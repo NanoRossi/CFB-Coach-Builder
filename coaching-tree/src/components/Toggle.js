@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import './PreorderToggle.css'; // Import the CSS styling
+import { useState } from 'react';
+import '../css/PreorderToggle.css'; // Import the CSS styling
 
-const PreorderToggle = ({ checked = false, onChange }) => {
+const Toggle = ({ checked = false, onChange }) => {
   const [isToggled, setIsToggled] = useState(checked);
 
   const handleToggle = () => {
@@ -16,4 +16,4 @@ const PreorderToggle = ({ checked = false, onChange }) => {
   );
 };
 
-export default PreorderToggle;
+export default Toggle;

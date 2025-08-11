@@ -1,0 +1,129 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background: linear-gradient(90deg, #1f2937, #111827);
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap; /* allow wrapping when needed */
+}
+
+.logo img {
+    height: 48px;
+    width: auto;
+    border-radius: 6px;
+}
+
+.title h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.options {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  padding: 0 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.options.open {
+  max-height: 500px; /* or big enough to show all options */
+  padding: 12px 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.options-toggle-button {
+    min-width: 140px;  /* or whatever fits your longest text */
+    /* rest of your styles */
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.options-toggle-button:hover,
+.options-toggle-button:focus {
+    background: rgba(255, 255, 255, 0.15);
+    outline: none;
+}
+
+.options-toggle-button:active {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.option {
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.option input[type="checkbox"],
+.option .toggle {
+    cursor: pointer;
+}
+
+/* Tablet breakpoint */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .title h1 {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    .options {
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 8px;
+    }
+
+    .option {
+        font-size: 0.9rem;
+        padding: 5px 8px;
+    }
+}
+
+/* Small mobile breakpoint */
+@media (max-width: 480px) {
+    .title h1 {
+        font-size: 1.3rem;
+    }
+
+    .options {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .option {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+}

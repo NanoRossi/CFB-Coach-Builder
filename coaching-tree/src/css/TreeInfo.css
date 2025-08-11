@@ -1,0 +1,96 @@
+.tree-info {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  margin-bottom: 1.5rem;
+}
+
+.skill-points {
+  flex: 1 1 200px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #1a1a1a;
+  min-width: 150px;
+}
+
+.starting-tree {
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #444;
+  min-width: 180px;
+}
+
+.starting-tree label {
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+}
+
+.starting-tree select {
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  border: 1.5px solid #ccc;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.25s ease;
+  cursor: pointer;
+}
+
+.starting-tree select:focus {
+  outline: none;
+  border-color: var(--primary-green, #28a745);
+  box-shadow: 0 0 6px rgba(40, 167, 69, 0.5);
+}
+
+.reset-button,
+.collapse-all-button {
+  flex: 0 1 150px;
+  display: flex;
+  align-items: center;
+}
+
+.reset-button button,
+.collapse-all-button button {
+  background-color: var(--primary-green, #28a745);
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(40, 167, 69, 0.35);
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  width: 100%;
+  font-size: 0.95rem;
+  user-select: none;
+}
+
+.reset-button button:hover,
+.collapse-all-button button:hover {
+  background-color: #218838;
+  box-shadow: 0 8px 20px rgba(33, 136, 56, 0.6);
+}
+
+/* Responsive for smaller widths */
+@media (max-width: 600px) {
+  .tree-info {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .reset-button,
+  .collapse-all-button {
+    flex: 1 1 100%;
+  }
+  .starting-tree,
+  .skill-points {
+    flex: 1 1 100%;
+  }
+}

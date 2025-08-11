@@ -1,892 +1,2164 @@
 {
-    "Motivator": {
-      "type": "basic",
-      "unlockRequirements": [],
-      "colour": "#E8B607",
-      "treeUnlockCost": null,
-      "index": 1,
-      "categories": [
-        {
-          "name": "Passing Game (QB)",
-          "skills": [
-            { "tier": 1, "description": "Interest boost for QB recruits when a current QB hits a skill cap", "cost": 8 },
-            { "tier": 2, "description": "QB's stay hot through timeouts, quarter changes, & across games", "cost": 8 },
-            { "tier": 3, "description": "QB's get an off-season training boost", "cost": 8 },
-            { "tier": 4, "description": "QB's start the 4th quarter \"hot\" in close games", "cost": 8 }
-          ]
-        },
-        {
-            "name": "Running Game (RB/FB)",
-            "skills": [
-              { "tier": 1, "description": "Interest boost for RB recruits when a current RB hits a skill cap", "cost": 8 },
-              { "tier": 2, "description": "RB's stay hot through timeouts, quarter changes, & across games", "cost": 8 },
-              { "tier": 3, "description": "RB's get an off-season training boost", "cost": 8 },
-              { "tier": 4, "description": "RB's start the 4th quarter \"hot\" in close games", "cost": 8 }
-            ]
-        },
-        {
-            "name": "Recieving Game (WR/TE)",
-            "skills": [
-              { "tier": 1, "description": "Interest boost for WR/TE recruits when a current WR/TE hits a skill cap", "cost": 8 },
-              { "tier": 2, "description": "WR/TE's stay hot through timeouts, quarter changes, & across games", "cost": 8 },
-              { "tier": 3, "description": "WR/TE's get an off-season training boost", "cost": 8 },
-              { "tier": 4, "description": "WR/TE's start the 4th quarter \"hot\" in close games", "cost": 8 }
-            ]
-        },
-        {
-            "name": "Blocking (OL)",
-            "skills": [
-              { "tier": 1, "description": "Interest boost for OL recruits when a current OL hits a skill cap", "cost": 8 },
-              { "tier": 2, "description": "OL's stay hot through timeouts, quarter changes, & across games", "cost": 8 },
-              { "tier": 3, "description": "OL's get an off-season training boost", "cost": 8 },
-              { "tier": 4, "description": "OL's start the 4th quarter \"hot\" in close games", "cost": 8 }
-            ]
-        }, 
-        {
-            "name": "Defensive Line (DL)",
-            "skills": [
-              { "tier": 1, "description": "Interest boost for DL recruits when a current DL hits a skill cap", "cost": 8 },
-              { "tier": 2, "description": "DL's stay hot through timeouts, quarter changes, & across games", "cost": 8 },
-              { "tier": 3, "description": "DL's get an off-season training boost", "cost": 8 },
-              { "tier": 4, "description": "DL's start the 4th quarter \"hot\" in close games", "cost": 8 }
-            ]
-        },          
-        {
-            "name": "Linebackers (LB)",
-            "skills": [
-              { "tier": 1, "description": "Interest boost for LB recruits when a current LB hits a skill cap", "cost": 8 },
-              { "tier": 2, "description": "LB's stay hot through timeouts, quarter changes, & across games", "cost": 8 },
-              { "tier": 3, "description": "LB's get an off-season training boost", "cost": 8 },
-              { "tier": 4, "description": "LB's start the 4th quarter \"hot\" in close games", "cost": 8 }
-            ]
-        },
-        {
-            "name": "Secondary (DB)",
-            "skills": [
-                { "tier": 1, "description": "Interest boost for DB recruits when a current DB hits a skill cap", "cost": 8 },
-                { "tier": 2, "description": "DB's stay hot through timeouts, quarter changes, & across games", "cost": 8 },
-                { "tier": 3, "description": "DB's get an off-season training boost", "cost": 8 },
-                { "tier": 4, "description": "DB's start the 4th quarter \"hot\" in close games", "cost": 8 }
-            ]
-        },
-        {
-            "name": "Specialist (K/P)",
-            "skills": [
-                { "tier": 1, "description": "Interest boost for K/P recruits when a current K/P hits a skill cap", "cost": 8 },
-                { "tier": 2, "description": "K/P's stay hot through timeouts, quarter changes, & across games", "cost": 8 },
-                { "tier": 3, "description": "K/P's get an off-season training boost", "cost": 8 },
-                { "tier": 4, "description": "K/P's start the 4th quarter \"hot\" in close games", "cost": 8 }
-            ]
-        }
-      ]
-    },
-    "Master Motivator": {
-      "type": "advanced",
-      "unlockRequirements": [
-        {
-          "Motivator": "50"
-        }
-      ],
-      "colour": "#E8B607",
-      "treeUnlockCost": null,
-      "index": 1,
-      "categories": [
-        {
-          "name": "Passing Game (QB)",
-          "skills": [
-            { "tier": 1, "description": "QB's recover wear and tear damage faster", "cost": 12 },
-            { "tier": 2, "description": "QB's are less likely to transfer", "cost": 12 },
-            { "tier": 3, "description": "Increase all XP gains for QB", "cost": 12 },
-            { "tier": 4, "description": "QB's start game with a composure boost", "cost": 12 }
-          ]
-        },
-        {
-            "name": "Running Game (RB/FB)",
-            "skills": [
-              { "tier": 1, "description": "RB's recover wear and tear damage faster", "cost": 12 },
-              { "tier": 2, "description": "RB's are less likely to transfer", "cost": 12 },
-              { "tier": 3, "description": "Increase all XP gains for RB", "cost": 12 },
-              { "tier": 4, "description": "RB's start game with a composure boost", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Recieving Game (WR/TE)",
-            "skills": [
-              { "tier": 1, "description": "WR/TE's recover wear and tear damage faster", "cost": 12 },
-              { "tier": 2, "description": "WR/TE's are less likely to transfer", "cost": 12 },
-              { "tier": 3, "description": "Increase all XP gains for WR/TE", "cost": 12 },
-              { "tier": 4, "description": "WR/TE's start game with a composure boost", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Blocking (OL)",
-            "skills": [
-              { "tier": 1, "description": "OL's recover wear and tear damage faster", "cost": 12 },
-              { "tier": 2, "description": "OL's are less likely to transfer", "cost": 12 },
-              { "tier": 3, "description": "Increase all XP gains for OL", "cost": 12 },
-              { "tier": 4, "description": "OL's start game with a composure boost", "cost": 12 }
-            ]
-        }, 
-        {
-            "name": "Defensive Line (DL)",
-            "skills": [
-              { "tier": 1, "description": "DL's recover wear and tear damage faster", "cost": 12 },
-              { "tier": 2, "description": "DL's are less likely to transfer", "cost": 12 },
-              { "tier": 3, "description": "Increase all XP gains for DL", "cost": 12 },
-              { "tier": 4, "description": "DL's start game with a composure boost", "cost": 12 }
-            ]
-        },          
-        {
-            "name": "Linebackers (LB)",
-            "skills": [
-              { "tier": 1, "description": "LB's recover wear and tear damage faster", "cost": 12 },
-              { "tier": 2, "description": "LB's are less likely to transfer", "cost": 12 },
-              { "tier": 3, "description": "Increase all XP gains for LB", "cost": 12 },
-              { "tier": 4, "description": "LB's start game with a composure boost", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Secondary (DB)",
-            "skills": [
-              { "tier": 1, "description": "DB's recover wear and tear damage faster", "cost": 12 },
-              { "tier": 2, "description": "DB's are less likely to transfer", "cost": 12 },
-              { "tier": 3, "description": "Increase all XP gains for DB", "cost": 12 },
-              { "tier": 4, "description": "DB's start game with a composure boost", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Specialist (K/P)",
-            "skills": [
-              { "tier": 1, "description": "K/P's recover wear and tear damage faster", "cost": 12 },
-              { "tier": 2, "description": "K/P's are less likely to transfer", "cost": 12 },
-              { "tier": 3, "description": "Increase all XP gains for K/P", "cost": 12 },
-              { "tier": 4, "description": "K/P's start game with a composure boost", "cost": 12 }
-            ]
-        }
-      ]
-    },
-    "Architect": {
-      "type": "crossover",
-      "unlockRequirements": [
-        {
-          "Tactician": "50",
-          "Motivator": "50"
-        }
-      ],
-      "colour": "#6B3C84",
-      "treeUnlockCost": null,
-      "index": 2,
-      "categories": [
-        {
-          "name": "Passing Game (QB)",
-          "skills": [
-            { "tier": 1, "description": "QB's earn an XP bonus for every three game win streak", "cost": 12 },
-            { "tier": 2, "description": "QB'S earn additional XP for in-game goals", "cost": 12 },
-            { "tier": 3, "description": "Chance to increase a random skill cap when leveling up", "cost": 12 },
-            { "tier": 4, "description": "Chance to increase best skill cap with a Conference or National Title", "cost": 12 }
-          ]
-        },
-        {
-            "name": "Running Game (RB/FB)",
-            "skills": [
-              { "tier": 1, "description": "RB's earn an XP bonus for every three game win streak", "cost": 12 },
-              { "tier": 2, "description": "RB'S earn additional XP for in-game goals", "cost": 12 },
-              { "tier": 3, "description": "Chance to increase a random skill cap when leveling up", "cost": 12 },
-              { "tier": 4, "description": "Chance to increase best skill cap with a Conference or National Title", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Recieving Game (WR/TE)",
-            "skills": [
-              { "tier": 1, "description": "WR/TE's earn an XP bonus for every three game win streak", "cost": 12 },
-              { "tier": 2, "description": "WR/TE'S earn additional XP for in-game goals", "cost": 12 },
-              { "tier": 3, "description": "Chance to increase a random skill cap when leveling up", "cost": 12 },
-              { "tier": 4, "description": "Chance to increase best skill cap with a Conference or National Title", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Blocking (OL)",
-            "skills": [
-              { "tier": 1, "description": "OL's earn an XP bonus for every three game win streak", "cost": 12 },
-              { "tier": 2, "description": "OL'S earn additional XP for in-game goals", "cost": 12 },
-              { "tier": 3, "description": "Chance to increase a random skill cap when leveling up", "cost": 12 },
-              { "tier": 4, "description": "Chance to increase best skill cap with a Conference or National Title", "cost": 12 }
-            ]
-        }, 
-        {
-            "name": "Defensive Line (DL)",
-            "skills": [
-              { "tier": 1, "description": "DL's earn an XP bonus for every three game win streak", "cost": 12 },
-              { "tier": 2, "description": "DL'S earn additional XP for in-game goals", "cost": 12 },
-              { "tier": 3, "description": "Chance to increase a random skill cap when leveling up", "cost": 12 },
-              { "tier": 4, "description": "Chance to increase best skill cap with a Conference or National Title", "cost": 12 }
-            ]
-        },          
-        {
-            "name": "Linebackers (LB)",
-            "skills": [
-              { "tier": 1, "description": "LB's earn an XP bonus for every three game win streak", "cost": 12 },
-              { "tier": 2, "description": "LB'S earn additional XP for in-game goals", "cost": 12 },
-              { "tier": 3, "description": "Chance to increase a random skill cap when leveling up", "cost": 12 },
-              { "tier": 4, "description": "Chance to increase best skill cap with a Conference or National Title", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Secondary (DB)",
-            "skills": [
-              { "tier": 1, "description": "DB's earn an XP bonus for every three game win streak", "cost": 12 },
-              { "tier": 2, "description": "DB'S earn additional XP for in-game goals", "cost": 12 },
-              { "tier": 3, "description": "Chance to increase a random skill cap when leveling up", "cost": 12 },
-              { "tier": 4, "description": "Chance to increase best skill cap with a Conference or National Title", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Specialist (K/P)",
-            "skills": [
-              { "tier": 1, "description": "K/P's earn an XP bonus for every three game win streak", "cost": 12 },
-              { "tier": 2, "description": "K/P'S earn additional XP for in-game goals", "cost": 12 },
-              { "tier": 3, "description": "Chance to increase a random skill cap when leveling up", "cost": 12 },
-              { "tier": 4, "description": "Chance to increase best skill cap with a Conference or National Title", "cost": 12 }
-            ]
-        }
-      ]
-    },
-    "Tactician": {
-      "type": "basic",
-      "unlockRequirements": [],
-      "colour": "#20385A",
-      "treeUnlockCost": null,
-      "index": 3,
-      "categories": [
-        {
-          "name": "Passing Game (QB)",
-          "skills": [
-            { "tier": 1, "description": "Boosts to throw on the run and change of direction", "cost": 8 },
-            { "tier": 2, "description": "Boosts throw under pressure and break sack", "cost": 8 },
-            { "tier": 3, "description": "Boosts to spin, juke and BC vision", "cost": 8 },
-            { "tier": 4, "description": "Boosts to short and medium accuracy", "cost": 8 }
-          ]
-        },
-        {
-            "name": "Running Game (RB/FB)",
-            "skills": [
-              { "tier": 1, "description": "Boosts to pass block and run block", "cost": 8 },
-              { "tier": 2, "description": "Boosts to trucking and break tackle", "cost": 8 },
-              { "tier": 3, "description": "Boosts to spin, juke and BC vision", "cost": 8 },
-              { "tier": 4, "description": "Boosts to catch and short route", "cost": 8 }
-            ]
-        },
-        {
-            "name": "Recieving Game (WR/TE)",
-            "skills": [
-              { "tier": 1, "description": "Boosts to run block power and run block finesse", "cost": 8 },
-              { "tier": 2, "description": "Boosts to juke and spin", "cost": 8 },
-              { "tier": 3, "description": "Boosts to short route and medium route", "cost": 8 },
-              { "tier": 4, "description": "Boosts to catch and catch in traffic", "cost": 8 }
-            ]
-        },
-        {
-            "name": "Blocking (OL)",
-            "skills": [
-              { "tier": 1, "description": "Boosts to pass block and impact block", "cost": 8 },
-              { "tier": 2, "description": "Boosts to run block and lead block", "cost": 8 },
-              { "tier": 3, "description": "Boosts to run block finesse and pass block finesse", "cost": 8 },
-              { "tier": 4, "description": "Boosts to pass block power and run block power", "cost": 8 }
-            ]
-        }, 
-        {
-            "name": "Defensive Line (DL)",
-            "skills": [
-              { "tier": 1, "description": "Boosts to change of direction and pursuit", "cost": 8 },
-              { "tier": 2, "description": "Boosts to finesse move and block shedding", "cost": 8 },
-              { "tier": 3, "description": "Boosts to power move and hit power", "cost": 8 },
-              { "tier": 4, "description": "Boosts to tackle and play recognition", "cost": 8 }
-            ]
-        },          
-        {
-            "name": "Linebackers (LB)",
-            "skills": [
-              { "tier": 1, "description": "Boosts to finesse move and block shedding", "cost": 8 },
-              { "tier": 2, "description": "Boosts to pursuit and play recognition", "cost": 8 },
-              { "tier": 3, "description": "Boosts to man coverage and zone coverage", "cost": 8 },
-              { "tier": 4, "description": "Boosts to tackle and hit power", "cost": 8 }
-            ]
-        },
-        {
-            "name": "Secondary (DB)",
-            "skills": [
-              { "tier": 1, "description": "Boosts to spin, Juke and BC vision", "cost": 8 },
-              { "tier": 2, "description": "Boosts to catch and jumping", "cost": 8 },
-              { "tier": 3, "description": "Boosts to man coverage and pursuit", "cost": 8 },
-              { "tier": 4, "description": "Boosts to zone coverage and play recognition", "cost": 8 }
-            ]
-        },
-        {
-            "name": "Specialist (K/P)",
-            "skills": [
-              { "tier": 1, "description": "Boost to kick accuracy", "cost": 8 },
-              { "tier": 2, "description": "Extra boost to kick accuracy", "cost": 8 },
-              { "tier": 3, "description": "Boost to kick power", "cost": 8 },
-              { "tier": 4, "description": "Extra boost to kick power", "cost": 8 }
-            ]
-        }
-      ]
-    },
-    "Scheme Guru": {
-      "type": "advanced",
-      "unlockRequirements": [
-        {
-          "Tactician": "50"
-        }
-      ],
-      "colour": "#20385A",
-      "treeUnlockCost": null,
-      "index": 3,
-      "categories": [
-        {
-          "name": "Fast Tempo Offense",
-          "skills": [
-            { "tier": 1, "description": "Offensive players fatigue slower in hurry up", "cost": 12 },
-            { "tier": 2, "description": "Increased delay to defenders looking to the sideline at the snap", "cost": 12 },
-            { "tier": 3, "description": "Team composure boost for 1st downs gained running hurry up", "cost": 12 },
-            { "tier": 4, "description": "Chance to see the defenders coverage shell in hurry up", "cost": 12 }
-          ]
-        },
-        {
-            "name": "Fast Tempo Defense",
-            "skills": [
-              { "tier": 1, "description": "Defenders fatigue at a slower rate", "cost": 12 },
-              { "tier": 2, "description": "Reduce delay for defenders looking to thhe sideline at the snap", "cost": 12 },
-              { "tier": 3, "description": "DL maintain their shed ability vs hurry up offenses", "cost": 12 },
-              { "tier": 4, "description": "Decrease offense's chance to see coverage shell in hurry up", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Pass Game Offense",
-            "skills": [
-              { "tier": 1, "description": "Increased catch ability for passes 10 years or less", "cost": 12 },
-              { "tier": 2, "description": "Increased catch ability for passes up to 20 yeards downfield", "cost": 12 },
-              { "tier": 3, "description": "Increased catch ability for passes anywhere on the field", "cost": 12 },
-              { "tier": 4, "description": "Chance for post snap blitz detection", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Pass Game Defense",
-            "skills": [
-              { "tier": 1, "description": "Increased knockout chance on passes 10 years or less", "cost": 12 },
-              { "tier": 2, "description": "Increased knockout chance for passes up to 20 yards downfield", "cost": 12 },
-              { "tier": 3, "description": "Increased knockout chance for passes anywhere on the field", "cost": 12 },
-              { "tier": 4, "description": "Chance for protection from post snap blitz detection", "cost": 12 }
-            ]
-        }, 
-        {
-            "name": "Ground & Pound Offense",
-            "skills": [
-              { "tier": 1, "description": "DL takes a fatigue hit for every 4+ yard rush", "cost": 12 },
-              { "tier": 2, "description": "DL & LB's take a fatigue hit for every 4+ yard rush", "cost": 12 },
-              { "tier": 3, "description": "Reduces defender ability to disengage from run blocks", "cost": 12 },
-              { "tier": 4, "description": "Reduces defender ability to shed run blocks", "cost": 12 }
-            ]
-        },          
-        {
-            "name": "Ground & Pound Defense",
-            "skills": [
-              { "tier": 1, "description": "DL fatigue slower on run plays", "cost": 12 },
-              { "tier": 2, "description": "DL & LB's fatigue slower on run plays", "cost": 12 },
-              { "tier": 3, "description": "Increase ability to disengage on run plays", "cost": 12 },
-              { "tier": 4, "description": "Decrease the time between block shed attempts", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Discipline/Communication - Offense",
-            "skills": [
-              { "tier": 1, "description": "Slight reduction in crow noise impact on the road", "cost": 12 },
-              { "tier": 2, "description": "Significant reduction to crowd noise impact on the road", "cost": 12 },
-              { "tier": 3, "description": "Offensive players will commit slightly fewer penalties", "cost": 12 },
-              { "tier": 4, "description": "Offensive players will commit significantly fewer penalties", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Discipline/Communication - Defense",
-            "skills": [
-              { "tier": 1, "description": "Slightly increased effects from crowd noise at home", "cost": 12 },
-              { "tier": 2, "description": "Significant increase to effects of crowd noise at home", "cost": 12 },
-              { "tier": 3, "description": "Defenders will commit slightly fewer penalties", "cost": 12 },
-              { "tier": 4, "description": "Defenders will commit signficantly fewer penalties", "cost": 12 }
-            ]
-        }
-      ]
-    },
-    "Strategist": {
-      "type": "crossover",
-      "unlockRequirements": [
-        {
-          "Recruiter": "50",
-          "Tactician": "50"
-        }
-      ],
-      "colour": "#A14208",
-      "treeUnlockCost": null,
-      "index": 4,
-      "categories": [
-        {
-          "name": "Passing Game (QB)",
-          "skills": [
-            { "tier": 1, "description": "Boosts to complimentary visits for QB's", "cost": 12 },
-            { "tier": 2, "description": "Visits have a bigger impact on QB prospects", "cost": 12 },
-            { "tier": 3, "description": "QB's have a lower dealbreaker threshold", "cost": 12 },
-            { "tier": 4, "description": "Increased chance to learn devtrait of QB's on visits", "cost": 12 }
-          ]
-        },
-        {
-            "name": "Running Game (RB/FB)",
-            "skills": [
-              { "tier": 1, "description": "Boosts to complimentary visits for RB's", "cost": 12 },
-              { "tier": 2, "description": "Visits have a bigger impact on RB prospects", "cost": 12 },
-              { "tier": 3, "description": "RB's have a lower dealbreaker threshold", "cost": 12 },
-              { "tier": 4, "description": "Increased chance to learn devtrait of RB's on visits", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Recieving Game (WR/TE)",
-            "skills": [
-              { "tier": 1, "description": "Boosts to complimentary visits for WR/TE's", "cost": 12 },
-              { "tier": 2, "description": "Visits have a bigger impact on WR/TE prospects", "cost": 12 },
-              { "tier": 3, "description": "WR/TE's have a lower dealbreaker threshold", "cost": 12 },
-              { "tier": 4, "description": "Increased chance to learn devtrait of WR/TE's on visits", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Blocking (OL)",
-            "skills": [
-              { "tier": 1, "description": "Boosts to complimentary visits for OL's", "cost": 12 },
-              { "tier": 2, "description": "Visits have a bigger impact on OL prospects", "cost": 12 },
-              { "tier": 3, "description": "OL have a lower dealbreaker threshold", "cost": 12 },
-              { "tier": 4, "description": "Increased chance to learn devtrait of OL's on visits", "cost": 12 }
-            ]
-        }, 
-        {
-            "name": "Defensive Line (DL)",
-            "skills": [
-              { "tier": 1, "description": "Boosts to complimentary visits for DL's", "cost": 12 },
-              { "tier": 2, "description": "Visits have a bigger impact on DL prospects", "cost": 12 },
-              { "tier": 3, "description": "DL's have a lower dealbreaker threshold", "cost": 12 },
-              { "tier": 4, "description": "Increased chance to learn devtrait of DL's on visits", "cost": 12 }
-            ]
-        },          
-        {
-            "name": "Linebackers (LB)",
-            "skills": [
-              { "tier": 1, "description": "Boosts to complimentary visits for LB's", "cost": 12 },
-              { "tier": 2, "description": "Visits have a bigger impact on LB prospects", "cost": 12 },
-              { "tier": 3, "description": "LB's have a lower dealbreaker threshold", "cost": 12 },
-              { "tier": 4, "description": "Increased chance to learn devtrait of LB's on visits", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Secondary (DB)",
-            "skills": [
-              { "tier": 1, "description": "Boosts to complimentary visits for DB's", "cost": 12 },
-              { "tier": 2, "description": "Visits have a bigger impact on DB prospects", "cost": 12 },
-              { "tier": 3, "description": "DN's have a lower dealbreaker threshold", "cost": 12 },
-              { "tier": 4, "description": "Increased chance to learn devtrait of DB's on visits", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Specialist (K/P)",
-            "skills": [
-              { "tier": 1, "description": "Boosts to complimentary visits for K/P's", "cost": 12 },
-              { "tier": 2, "description": "Visits have a bigger impact on K/P prospects", "cost": 12 },
-              { "tier": 3, "description": "K/P's have a lower dealbreaker threshold", "cost": 12 },
-              { "tier": 4, "description": "Increased chance to learn devtrait of K/P's on visits", "cost": 12 }
-            ]
-        }
-      ]
-    },
-    "Recruiter": {
-      "type": "basic",
-      "unlockRequirements": [],
-      "colour": "#692F3D",
-      "treeUnlockCost": null,
-      "index": 5,
-      "categories": [
-        {
-          "name": "Passing Game (QB)",
-          "skills": [
-            { "tier": 1, "description": "QB's take less time to fully scout", "cost": 8 },
-            { "tier": 2, "description": "Increase starting interest from QB's", "cost": 8 },
-            { "tier": 3, "description": "QB transfers are more interested", "cost": 8 },
-            { "tier": 4, "description": "Increased chance to sway QBs", "cost": 8 }
-          ]
-        },
-        {
-            "name": "Running Game (RB/FB)",
-            "skills": [
-              { "tier": 1, "description": "RB's take less time to fully scout", "cost": 8 },
-              { "tier": 2, "description": "Increase starting interest from RB's", "cost": 8 },
-              { "tier": 3, "description": "RB transfers are more interested", "cost": 8 },
-              { "tier": 4, "description": "Increased chance to sway RBs", "cost": 8 }
-            ]
-        },
-        {
-            "name": "Recieving Game (WR/TE)",
-            "skills": [
-              { "tier": 1, "description": "WR/TE's take less time to fully scout", "cost": 8 },
-              { "tier": 2, "description": "Increase starting interest from WR/TE's", "cost": 8 },
-              { "tier": 2, "description": "WR/TE transfers are more interested", "cost": 8 },
-              { "tier": 3, "description": "Increased chance to sway WR and TE's", "cost": 8 }
-            ]
-        },
-        {
-            "name": "Blocking (OL)",
-            "skills": [
-              { "tier": 1, "description": "OL's take less time to fully scout", "cost": 8 },
-              { "tier": 2, "description": "Increase starting interest from OL's", "cost": 8 },
-              { "tier": 3, "description": "OL transfers are more interested", "cost": 8 },
-              { "tier": 4, "description": "Increased chance to sway OL", "cost": 8 }
-            ]
-        }, 
-        {
-            "name": "Defensive Line (DL)",
-            "skills": [
-              { "tier": 1, "description": "DL's take less time to fully scout", "cost": 8 },
-              { "tier": 2, "description": "Increase starting interest from DL's", "cost": 8 },
-              { "tier": 3, "description": "DL transfers are more interested", "cost": 8 },
-              { "tier": 4, "description": "Increased chance to sway DL", "cost": 8 }
-            ]
-        },          
-        {
-            "name": "Linebackers (LB)",
-            "skills": [
-              { "tier": 1, "description": "LB's take less time to fully scout", "cost": 8 },
-              { "tier": 2, "description": "Increase starting interest from LB's", "cost": 8 },
-              { "tier": 3, "description": "LB transfers are more interested", "cost": 8 },
-              { "tier": 4, "description": "Increased chance to sway LBs", "cost": 8 }
-            ]
-        },
-        {
-            "name": "Secondary (DB)",
-            "skills": [
-              { "tier": 1, "description": "DB's take less time to fully scout", "cost": 8 },
-              { "tier": 2, "description": "Increase starting interest from DB's", "cost": 8 },
-              { "tier": 3, "description": "DB transfers are more interested", "cost": 8 },
-              { "tier": 4, "description": "Increased chance to sway DBs", "cost": 8 }
-            ]
-        },
-        {
-            "name": "Specialist (K/P)",
-            "skills": [
-              { "tier": 1, "description": "K/P's take less time to fully scout", "cost": 8 },
-              { "tier": 2, "description": "Increase starting interest from K/P's", "cost": 8 },
-              { "tier": 3, "description": "K/P transfers are more interested", "cost": 8 },
-              { "tier": 4, "description": "Increased chance to sway K/Ps", "cost": 8 }
-            ]
-        }
-      ]
-    },
-    "Elite Recruiter": {
-      "type": "advanced",
-      "unlockRequirements": [
-        {
-          "Recruiter": "50"
-        }
-      ],
-      "colour": "#692F3D",
-      "treeUnlockCost": null,
-      "index": 5,
-      "categories": [
-        {
-          "name": "Passing Game (QB)",
-          "skills": [
-            { "tier": 1, "description": "Boost to ideal pitch grades for QB's", "cost": 12 },
-            { "tier": 2, "description": "My School grades have a larger impact on QB's", "cost": 12 },
-            { "tier": 3, "description": "Recruiting actions have bigger impacts on QB's", "cost": 12 },
-            { "tier": 4, "description": "Increase weekly recruiting hours for QB's", "cost": 12 }
-          ]
-        },
-        {
-            "name": "Running Game (RB/FB)",
-            "skills": [
-              { "tier": 1, "description": "Boost to ideal pitch grades for RB's", "cost": 12 },
-              { "tier": 2, "description": "My School grades have a larger impact on RB's", "cost": 12 },
-              { "tier": 3, "description": "Recruiting actions have bigger impacts on RB's", "cost": 12 },
-              { "tier": 4, "description": "Increase weekly recruiting hours for RB's", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Recieving Game (WR/TE)",
-            "skills": [
-              { "tier": 1, "description": "Boost to ideal pitch grades for WR/TE's", "cost": 12 },
-              { "tier": 2, "description": "My School grades have a larger impact on WR/TE's", "cost": 12 },
-              { "tier": 3, "description": "Recruiting actions have bigger impacts on WR/TE's", "cost": 12 },
-              { "tier": 4, "description": "Increase weekly recruiting hours for WR/TE's", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Blocking (OL)",
-            "skills": [
-              { "tier": 1, "description": "Boost to ideal pitch grades for OL", "cost": 12 },
-              { "tier": 2, "description": "My School grades have a larger impact on OL", "cost": 12 },
-              { "tier": 3, "description": "Recruiting actions have bigger impacts on OL", "cost": 12 },
-              { "tier": 4, "description": "Increase weekly recruiting hours for OL", "cost": 12 }
-            ]
-        }, 
-        {
-            "name": "Defensive Line (DL)",
-            "skills": [
-              { "tier": 1, "description": "Boost to ideal pitch grades for DL", "cost": 12 },
-              { "tier": 2, "description": "My School grades have a larger impact on DL", "cost": 12 },
-              { "tier": 3, "description": "Recruiting actions have bigger impacts on DL", "cost": 12 },
-              { "tier": 4, "description": "Increase weekly recruiting hours for DL", "cost": 12 }
-            ]
-        },          
-        {
-            "name": "Linebackers (LB)",
-            "skills": [
-              { "tier": 1, "description": "Boost to ideal pitch grades for LB's", "cost": 12 },
-              { "tier": 2, "description": "My School grades have a larger impact on LB's", "cost": 12 },
-              { "tier": 3, "description": "Recruiting actions have bigger impacts on LB's", "cost": 12 },
-              { "tier": 4, "description": "Increase weekly recruiting hours for LB's", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Secondary (DB)",
-            "skills": [
-              { "tier": 1, "description": "Boost to ideal pitch grades for DB's", "cost": 12 },
-              { "tier": 2, "description": "My School grades have a larger impact on DB's", "cost": 12 },
-              { "tier": 3, "description": "Recruiting actions have bigger impacts on DB's", "cost": 12 },
-              { "tier": 4, "description": "Increase weekly recruiting hours for DB's", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Specialist (K/P)",
-            "skills": [
-              { "tier": 1, "description": "Boost to ideal pitch grades for K/Ps", "cost": 12 },
-              { "tier": 2, "description": "My School grades have a larger impact on K/Ps", "cost": 12 },
-              { "tier": 3, "description": "Recruiting actions have bigger impacts on K/Ps", "cost": 12 },
-              { "tier": 4, "description": "Increase weekly recruiting hours for K/Ps", "cost": 12 }
-            ]
-        }
-      ]
-    },
-    "Talent Developer": {
-      "type": "crossover",
-      "unlockRequirements": [
-        {
-          "Recruiter": "50",
-          "Motivator": "50"
-        }
-      ],
-      "colour": "#6C12B50",
-      "treeUnlockCost": null,
-      "index": 6,
-      "categories": [
-        {
-          "name": "Passing Game (QB)",
-          "skills": [
-            { "tier": 1, "description": "Bonus XP for QBs when QBs are drafted", "cost": 12 },
-            { "tier": 2, "description": "Freshman and Sophomore QBs progress faster", "cost": 12 },
-            { "tier": 3, "description": "Starting QB will gain XP faster", "cost": 12 },
-            { "tier": 4, "description": "Boost to pipeline bonus for QBs", "cost": 12 }
-          ]
-        },
-        {
-            "name": "Running Game (RB/FB)",
-            "skills": [
-              { "tier": 1, "description": "Bonus XP for RBs when RBs are drafted", "cost": 12 },
-              { "tier": 2, "description": "Freshman and Sophomore RBs progress faster", "cost": 12 },
-              { "tier": 3, "description": "Starting RB will gain XP faster", "cost": 12 },
-              { "tier": 4, "description": "Boost to pipeline bonus for RBs", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Recieving Game (WR/TE)",
-            "skills": [
-              { "tier": 1, "description": "Bonus XP for WR/TEs when WR/TEs are drafted", "cost": 12 },
-              { "tier": 2, "description": "Freshman and Sophomore WR/TEs progress faster", "cost": 12 },
-              { "tier": 3, "description": "Starting WR/TE will gain XP faster", "cost": 12 },
-              { "tier": 4, "description": "Boost to pipeline bonus for WR/TEs", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Blocking (OL)",
-            "skills": [
-              { "tier": 1, "description": "Bonus XP for OL when OL are drafted", "cost": 12 },
-              { "tier": 2, "description": "Freshman and Sophomore OLs progress faster", "cost": 12 },
-              { "tier": 3, "description": "Starting OL will gain XP faster", "cost": 12 },
-              { "tier": 4, "description": "Boost to pipeline bonus for OLs", "cost": 12 }
-            ]
-        }, 
-        {
-            "name": "Defensive Line (DL)",
-            "skills": [
-              { "tier": 1, "description": "Bonus XP for DLs when DLs are drafted", "cost": 12 },
-              { "tier": 2, "description": "Freshman and Sophomore DLs progress faster", "cost": 12 },
-              { "tier": 3, "description": "Starting DL will gain XP faster", "cost": 12 },
-              { "tier": 4, "description": "Boost to pipeline bonus for DLs", "cost": 12 }
-            ]
-        },          
-        {
-            "name": "Linebackers (LB)",
-            "skills": [
-              { "tier": 1, "description": "Bonus XP for LBs when LBs are drafted", "cost": 12 },
-              { "tier": 2, "description": "Freshman and Sophomore LBs progress faster", "cost": 12 },
-              { "tier": 3, "description": "Starting LBs will gain XP faster", "cost": 12 },
-              { "tier": 4, "description": "Boost to pipeline bonus for LBs", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Secondary (DB)",
-            "skills": [
-              { "tier": 1, "description": "Bonus XP for DBs when DBs are drafted", "cost": 12 },
-              { "tier": 2, "description": "Freshman and Sophomore DBs progress faster", "cost": 12 },
-              { "tier": 3, "description": "Starting DBs will gain XP faster", "cost": 12 },
-              { "tier": 4, "description": "Boost to pipeline bonus for DBs", "cost": 12 }
-            ]
-        },
-        {
-            "name": "Specialist (K/P)",
-            "skills": [
-              { "tier": 1, "description": "Bonus XP for K/Ps when K/Ps are drafted", "cost": 12 },
-              { "tier": 2, "description": "Freshman and Sophomore K/Ps progress faster", "cost": 12 },
-              { "tier": 3, "description": "Starting K/P will gain XP faster", "cost": 12 },
-              { "tier": 4, "description": "Boost to pipeline bonus for K/Ps", "cost": 12 }
-            ]
-        }
-      ]
-    },
-    "Program Builder": {
-      "type": "elite",
-      "unlockRequirements": [
-        {
-          "Any": "125"
-        }
-      ],
-      "colour": "#CDD2D6",
-      "treeUnlockCost": 30,
-      "categories": [
-        {
-          "name": "Coaching Family",
-          "skills": [
-            { "tier": 1, "description": "Coordinators are less likely to leave in the coaching carousel", "cost": 16 },
-            { "tier": 2, "description": "Coordinators are more likely to accept your job offer", "cost": 16 },
-            { "tier": 3, "description": "Increase the caliber of the coordinators available for you to hire", "cost": 16 }
-          ]
-        },
-        {
-          "name": "Set the Tone",
-          "skills": [
-            { "tier": 1, "description": "Increased HFA composure penalties for away team at home", "cost": 16 },
-            { "tier": 2, "description": "Protection from HFA composure penalties on road", "cost": 16 },
-            { "tier": 3, "description": "Increased protection from HFA composure effects in rivalry games", "cost": 16 }
-          ]
-        },
-        {
-          "name": "Roster Retention",
-          "skills": [
-            { "tier": 1, "description": "3rd-7th round projected players are less likely to leave for the NFL", "cost": 16 },
-            { "tier": 2, "description": "2nd round projected players are less likely to leave for the NFL", "cost": 16 },
-            { "tier": 3, "description": "1st round projected players are less likely to leave for the NFL", "cost": 16 }
-          ]
-        },
-        {
-          "name": "High Integrity",
-          "skills": [
-            { "tier": 1, "description": "Gain 3 additional persuade attempts per season", "cost": 16 },
-            { "tier": 2, "description": "Persuades have a higher success rate", "cost": 16 },
-            { "tier": 3, "description": "Successful persuades refund the attempt", "cost": 16 }
-          ]
-        },
-        {
-          "name": "Strong Roots",
-          "skills": [
-            { "tier": 1, "description": "Boosts to your primary pipeline", "cost": 16 },
-            { "tier": 2, "description": "Boost to starting interest for recruits from your primary pipeline", "cost": 16 },
-            { "tier": 3, "description": "Recruits from your primary pipeline gain extra influence boosts", "cost": 16 }
-          ]
-        },
-        {
-          "name": "Relationship Builder",
-          "skills": [
-            { "tier": 1, "description": "Upgrade your school's best two pipelines by one tier", "cost": 16 },
-            { "tier": 2, "description": "Upgrades your school's five best pipelines by one tier", "cost": 16 },
-            { "tier": 3, "description": "Upgrades your school's five worst pipelines by one tier", "cost": 16 }
-          ]
-        },
-        {
-          "name": "Inside Track",
-          "skills": [
-            { "tier": 1, "description": "Earn 25% more XP from all completed goals", "cost": 16 },
-            { "tier": 2, "description": "Able to see other school's At Risk players on My School", "cost": 16 },
-            { "tier": 3, "description": "Archetypes are 20CP cheaper for each coach that owns that Archetype", "cost": 16 }
-          ]
-        }
-      ]
-    },
-    "CEO": {
-      "type": "elite",
-      "unlockRequirements": [
-        {
-          "Any": "200"
-        }
-      ],
-      "colour": "#C2B064",
-      "treeUnlockCost": 35,
-      "categories": [
-        {
-          "name": "Gainz Getter",
-          "skills": [
-            { "tier": 1, "description": "Increase the chance that a player upgrades their dev trait", "cost": 16 }
-          ]
-        },
-        {
-          "name": "Second Chance Keeper",
-          "skills": [
-            { "tier": 1, "description": "Spend a second persuade on a player if the first fails", "cost": 16 }
-          ]
-        },
-        {
-          "name": "Lasting Impressions",
-          "skills": [
-            { "tier": 1, "description": "Gain additional interest for every 10 hours spent", "cost": 16 }
-          ]
-        },
-        {
-          "name": "More The Merrier",
-          "skills": [
-            { "tier": 1, "description": "Increase the number of players who can visit in a week to 8", "cost": 16 }
-          ]
-        },
-        {
-          "name": "Gasoline",
-          "skills": [
-            { "tier": 1, "description": "Players start hot in top 5/rivalry/bowl/championship games", "cost": 16 }
-          ]
-        },
-        {
-          "name": "Last Damce",
-          "skills": [
-            { "tier": 1, "description": "Bonus Interest for every visit a player has taken before visiting you", "cost": 16 }
-          ]
-        },
-        {
-          "name": "Dream School",
-          "skills": [
-            { "tier": 1, "description": "Chance at instant commit when offering scholarship as their top school", "cost": 16 }
-          ]
-        },
-        {
-          "name": "Bundle Discount",
-          "skills": [
-            { "tier": 1, "description": "Coach abilities are 2CP less for every coach on your staff with that ability", "cost": 16 }
-          ]
-        },
-        {
-          "name": "Senior Superlatives",
-          "skills": [
-            { "tier": 1, "description": "Increase all skill group caps by one for rising Seniors", "cost": 16 }
-          ]
-        }
-      ]
-    }
+  "Motivator": {
+    "type": "basic",
+    "unlockRequirements": [],
+    "colour": "#E8B607",
+    "treeUnlockCost": null,
+    "index": 1,
+    "categories": [
+      {
+        "name": "Passing Game (QB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Interest boost for QB recruits when a current QB hits a skill cap",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "QB's stay hot through timeouts, quarter changes, & across games",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "QB's get an off-season training boost",
+            "cost": 8
+          },
+          {
+            "tier": 4,
+            "description": "QB's start the 4th quarter \"hot\" in close games",
+            "cost": 8
+          }
+        ]
+      },
+      {
+        "name": "Running Game (RB/FB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Interest boost for RB recruits when a current RB hits a skill cap",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "RB's stay hot through timeouts, quarter changes, & across games",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "RB's get an off-season training boost",
+            "cost": 8
+          },
+          {
+            "tier": 4,
+            "description": "RB's start the 4th quarter \"hot\" in close games",
+            "cost": 8
+          }
+        ]
+      },
+      {
+        "name": "Recieving Game (WR/TE)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Interest boost for WR/TE recruits when a current WR/TE hits a skill cap",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "WR/TE's stay hot through timeouts, quarter changes, & across games",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "WR/TE's get an off-season training boost",
+            "cost": 8
+          },
+          {
+            "tier": 4,
+            "description": "WR/TE's start the 4th quarter \"hot\" in close games",
+            "cost": 8
+          }
+        ]
+      },
+      {
+        "name": "Blocking (OL)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Interest boost for OL recruits when a current OL hits a skill cap",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "OL's stay hot through timeouts, quarter changes, & across games",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "OL's get an off-season training boost",
+            "cost": 8
+          },
+          {
+            "tier": 4,
+            "description": "OL's start the 4th quarter \"hot\" in close games",
+            "cost": 8
+          }
+        ]
+      },
+      {
+        "name": "Defensive Line (DL)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Interest boost for DL recruits when a current DL hits a skill cap",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "DL's stay hot through timeouts, quarter changes, & across games",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "DL's get an off-season training boost",
+            "cost": 8
+          },
+          {
+            "tier": 4,
+            "description": "DL's start the 4th quarter \"hot\" in close games",
+            "cost": 8
+          }
+        ]
+      },
+      {
+        "name": "Linebackers (LB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Interest boost for LB recruits when a current LB hits a skill cap",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "LB's stay hot through timeouts, quarter changes, & across games",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "LB's get an off-season training boost",
+            "cost": 8
+          },
+          {
+            "tier": 4,
+            "description": "LB's start the 4th quarter \"hot\" in close games",
+            "cost": 8
+          }
+        ]
+      },
+      {
+        "name": "Secondary (DB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Interest boost for DB recruits when a current DB hits a skill cap",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "DB's stay hot through timeouts, quarter changes, & across games",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "DB's get an off-season training boost",
+            "cost": 8
+          },
+          {
+            "tier": 4,
+            "description": "DB's start the 4th quarter \"hot\" in close games",
+            "cost": 8
+          }
+        ]
+      },
+      {
+        "name": "Specialist (K/P)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Interest boost for K/P recruits when a current K/P hits a skill cap",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "K/P's stay hot through timeouts, quarter changes, & across games",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "K/P's get an off-season training boost",
+            "cost": 8
+          },
+          {
+            "tier": 4,
+            "description": "K/P's start the 4th quarter \"hot\" in close games",
+            "cost": 8
+          }
+        ]
+      }
+    ]
+  },
+  "Master Motivator": {
+    "type": "advanced",
+    "unlockRequirements": [
+      {
+        "Motivator": "50"
+      }
+    ],
+    "colour": "#E8B607",
+    "treeUnlockCost": null,
+    "index": 1,
+    "categories": [
+      {
+        "name": "Passing Game (QB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "QB's recover wear and tear damage faster",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "QB's are less likely to transfer",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Increase all XP gains for QB",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "QB's start game with a composure boost",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Running Game (RB/FB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "RB's recover wear and tear damage faster",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "RB's are less likely to transfer",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Increase all XP gains for RB",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "RB's start game with a composure boost",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Recieving Game (WR/TE)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "WR/TE's recover wear and tear damage faster",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "WR/TE's are less likely to transfer",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Increase all XP gains for WR/TE",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "WR/TE's start game with a composure boost",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Blocking (OL)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "OL's recover wear and tear damage faster",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "OL's are less likely to transfer",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Increase all XP gains for OL",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "OL's start game with a composure boost",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Defensive Line (DL)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "DL's recover wear and tear damage faster",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "DL's are less likely to transfer",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Increase all XP gains for DL",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "DL's start game with a composure boost",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Linebackers (LB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "LB's recover wear and tear damage faster",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "LB's are less likely to transfer",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Increase all XP gains for LB",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "LB's start game with a composure boost",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Secondary (DB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "DB's recover wear and tear damage faster",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "DB's are less likely to transfer",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Increase all XP gains for DB",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "DB's start game with a composure boost",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Specialist (K/P)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "K/P's recover wear and tear damage faster",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "K/P's are less likely to transfer",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Increase all XP gains for K/P",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "K/P's start game with a composure boost",
+            "cost": 12
+          }
+        ]
+      }
+    ]
+  },
+  "Architect": {
+    "type": "crossover",
+    "unlockRequirements": [
+      {
+        "Tactician": "50",
+        "Motivator": "50"
+      }
+    ],
+    "colour": "#6B3C84",
+    "treeUnlockCost": null,
+    "index": 2,
+    "categories": [
+      {
+        "name": "Passing Game (QB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "QB's earn an XP bonus for every three game win streak",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "QB'S earn additional XP for in-game goals",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Chance to increase a random skill cap when leveling up",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Chance to increase best skill cap with a Conference or National Title",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Running Game (RB/FB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "RB's earn an XP bonus for every three game win streak",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "RB'S earn additional XP for in-game goals",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Chance to increase a random skill cap when leveling up",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Chance to increase best skill cap with a Conference or National Title",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Recieving Game (WR/TE)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "WR/TE's earn an XP bonus for every three game win streak",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "WR/TE'S earn additional XP for in-game goals",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Chance to increase a random skill cap when leveling up",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Chance to increase best skill cap with a Conference or National Title",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Blocking (OL)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "OL's earn an XP bonus for every three game win streak",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "OL'S earn additional XP for in-game goals",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Chance to increase a random skill cap when leveling up",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Chance to increase best skill cap with a Conference or National Title",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Defensive Line (DL)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "DL's earn an XP bonus for every three game win streak",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "DL'S earn additional XP for in-game goals",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Chance to increase a random skill cap when leveling up",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Chance to increase best skill cap with a Conference or National Title",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Linebackers (LB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "LB's earn an XP bonus for every three game win streak",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "LB'S earn additional XP for in-game goals",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Chance to increase a random skill cap when leveling up",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Chance to increase best skill cap with a Conference or National Title",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Secondary (DB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "DB's earn an XP bonus for every three game win streak",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "DB'S earn additional XP for in-game goals",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Chance to increase a random skill cap when leveling up",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Chance to increase best skill cap with a Conference or National Title",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Specialist (K/P)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "K/P's earn an XP bonus for every three game win streak",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "K/P'S earn additional XP for in-game goals",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Chance to increase a random skill cap when leveling up",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Chance to increase best skill cap with a Conference or National Title",
+            "cost": 12
+          }
+        ]
+      }
+    ]
+  },
+  "Tactician": {
+    "type": "basic",
+    "unlockRequirements": [],
+    "colour": "#20385A",
+    "treeUnlockCost": null,
+    "index": 3,
+    "categories": [
+      {
+        "name": "Passing Game (QB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boosts to throw on the run and change of direction",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "Boosts throw under pressure and break sack",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "Boosts to spin, juke and BC vision",
+            "cost": 8
+          },
+          {
+            "tier": 4,
+            "description": "Boosts to short and medium accuracy",
+            "cost": 8
+          }
+        ]
+      },
+      {
+        "name": "Running Game (RB/FB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boosts to pass block and run block",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "Boosts to trucking and break tackle",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "Boosts to spin, juke and BC vision",
+            "cost": 8
+          },
+          {
+            "tier": 4,
+            "description": "Boosts to catch and short route",
+            "cost": 8
+          }
+        ]
+      },
+      {
+        "name": "Recieving Game (WR/TE)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boosts to run block power and run block finesse",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "Boosts to juke and spin",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "Boosts to short route and medium route",
+            "cost": 8
+          },
+          {
+            "tier": 4,
+            "description": "Boosts to catch and catch in traffic",
+            "cost": 8
+          }
+        ]
+      },
+      {
+        "name": "Blocking (OL)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boosts to pass block and impact block",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "Boosts to run block and lead block",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "Boosts to run block finesse and pass block finesse",
+            "cost": 8
+          },
+          {
+            "tier": 4,
+            "description": "Boosts to pass block power and run block power",
+            "cost": 8
+          }
+        ]
+      },
+      {
+        "name": "Defensive Line (DL)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boosts to change of direction and pursuit",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "Boosts to finesse move and block shedding",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "Boosts to power move and hit power",
+            "cost": 8
+          },
+          {
+            "tier": 4,
+            "description": "Boosts to tackle and play recognition",
+            "cost": 8
+          }
+        ]
+      },
+      {
+        "name": "Linebackers (LB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boosts to finesse move and block shedding",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "Boosts to pursuit and play recognition",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "Boosts to man coverage and zone coverage",
+            "cost": 8
+          },
+          {
+            "tier": 4,
+            "description": "Boosts to tackle and hit power",
+            "cost": 8
+          }
+        ]
+      },
+      {
+        "name": "Secondary (DB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boosts to spin, Juke and BC vision",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "Boosts to catch and jumping",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "Boosts to man coverage and pursuit",
+            "cost": 8
+          },
+          {
+            "tier": 4,
+            "description": "Boosts to zone coverage and play recognition",
+            "cost": 8
+          }
+        ]
+      },
+      {
+        "name": "Specialist (K/P)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boost to kick accuracy",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "Extra boost to kick accuracy",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "Boost to kick power",
+            "cost": 8
+          },
+          {
+            "tier": 4,
+            "description": "Extra boost to kick power",
+            "cost": 8
+          }
+        ]
+      }
+    ]
+  },
+  "Scheme Guru": {
+    "type": "advanced",
+    "unlockRequirements": [
+      {
+        "Tactician": "50"
+      }
+    ],
+    "colour": "#20385A",
+    "treeUnlockCost": null,
+    "index": 3,
+    "categories": [
+      {
+        "name": "Fast Tempo Offense",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Offensive players fatigue slower in hurry up",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "Increased delay to defenders looking to the sideline at the snap",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Team composure boost for 1st downs gained running hurry up",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Chance to see the defenders coverage shell in hurry up",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Fast Tempo Defense",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Defenders fatigue at a slower rate",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "Reduce delay for defenders looking to thhe sideline at the snap",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "DL maintain their shed ability vs hurry up offenses",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Decrease offense's chance to see coverage shell in hurry up",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Pass Game Offense",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Increased catch ability for passes 10 years or less",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "Increased catch ability for passes up to 20 yeards downfield",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Increased catch ability for passes anywhere on the field",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Chance for post snap blitz detection",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Pass Game Defense",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Increased knockout chance on passes 10 years or less",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "Increased knockout chance for passes up to 20 yards downfield",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Increased knockout chance for passes anywhere on the field",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Chance for protection from post snap blitz detection",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Ground & Pound Offense",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "DL takes a fatigue hit for every 4+ yard rush",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "DL & LB's take a fatigue hit for every 4+ yard rush",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Reduces defender ability to disengage from run blocks",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Reduces defender ability to shed run blocks",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Ground & Pound Defense",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "DL fatigue slower on run plays",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "DL & LB's fatigue slower on run plays",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Increase ability to disengage on run plays",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Decrease the time between block shed attempts",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Discipline/Communication - Offense",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Slight reduction in crow noise impact on the road",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "Significant reduction to crowd noise impact on the road",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Offensive players will commit slightly fewer penalties",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Offensive players will commit significantly fewer penalties",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Discipline/Communication - Defense",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Slightly increased effects from crowd noise at home",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "Significant increase to effects of crowd noise at home",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Defenders will commit slightly fewer penalties",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Defenders will commit signficantly fewer penalties",
+            "cost": 12
+          }
+        ]
+      }
+    ]
+  },
+  "Strategist": {
+    "type": "crossover",
+    "unlockRequirements": [
+      {
+        "Recruiter": "50",
+        "Tactician": "50"
+      }
+    ],
+    "colour": "#A14208",
+    "treeUnlockCost": null,
+    "index": 4,
+    "categories": [
+      {
+        "name": "Passing Game (QB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boosts to complimentary visits for QB's",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "Visits have a bigger impact on QB prospects",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "QB's have a lower dealbreaker threshold",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Increased chance to learn devtrait of QB's on visits",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Running Game (RB/FB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boosts to complimentary visits for RB's",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "Visits have a bigger impact on RB prospects",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "RB's have a lower dealbreaker threshold",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Increased chance to learn devtrait of RB's on visits",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Recieving Game (WR/TE)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boosts to complimentary visits for WR/TE's",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "Visits have a bigger impact on WR/TE prospects",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "WR/TE's have a lower dealbreaker threshold",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Increased chance to learn devtrait of WR/TE's on visits",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Blocking (OL)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boosts to complimentary visits for OL's",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "Visits have a bigger impact on OL prospects",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "OL have a lower dealbreaker threshold",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Increased chance to learn devtrait of OL's on visits",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Defensive Line (DL)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boosts to complimentary visits for DL's",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "Visits have a bigger impact on DL prospects",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "DL's have a lower dealbreaker threshold",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Increased chance to learn devtrait of DL's on visits",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Linebackers (LB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boosts to complimentary visits for LB's",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "Visits have a bigger impact on LB prospects",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "LB's have a lower dealbreaker threshold",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Increased chance to learn devtrait of LB's on visits",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Secondary (DB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boosts to complimentary visits for DB's",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "Visits have a bigger impact on DB prospects",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "DN's have a lower dealbreaker threshold",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Increased chance to learn devtrait of DB's on visits",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Specialist (K/P)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boosts to complimentary visits for K/P's",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "Visits have a bigger impact on K/P prospects",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "K/P's have a lower dealbreaker threshold",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Increased chance to learn devtrait of K/P's on visits",
+            "cost": 12
+          }
+        ]
+      }
+    ]
+  },
+  "Recruiter": {
+    "type": "basic",
+    "unlockRequirements": [],
+    "colour": "#692F3D",
+    "treeUnlockCost": null,
+    "index": 5,
+    "categories": [
+      {
+        "name": "Passing Game (QB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "QB's take less time to fully scout",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "Increase starting interest from QB's",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "QB transfers are more interested",
+            "cost": 8
+          },
+          {
+            "tier": 4,
+            "description": "Increased chance to sway QBs",
+            "cost": 8
+          }
+        ]
+      },
+      {
+        "name": "Running Game (RB/FB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "RB's take less time to fully scout",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "Increase starting interest from RB's",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "RB transfers are more interested",
+            "cost": 8
+          },
+          {
+            "tier": 4,
+            "description": "Increased chance to sway RBs",
+            "cost": 8
+          }
+        ]
+      },
+      {
+        "name": "Recieving Game (WR/TE)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "WR/TE's take less time to fully scout",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "Increase starting interest from WR/TE's",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "WR/TE transfers are more interested",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "Increased chance to sway WR and TE's",
+            "cost": 8
+          }
+        ]
+      },
+      {
+        "name": "Blocking (OL)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "OL's take less time to fully scout",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "Increase starting interest from OL's",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "OL transfers are more interested",
+            "cost": 8
+          },
+          {
+            "tier": 4,
+            "description": "Increased chance to sway OL",
+            "cost": 8
+          }
+        ]
+      },
+      {
+        "name": "Defensive Line (DL)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "DL's take less time to fully scout",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "Increase starting interest from DL's",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "DL transfers are more interested",
+            "cost": 8
+          },
+          {
+            "tier": 4,
+            "description": "Increased chance to sway DL",
+            "cost": 8
+          }
+        ]
+      },
+      {
+        "name": "Linebackers (LB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "LB's take less time to fully scout",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "Increase starting interest from LB's",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "LB transfers are more interested",
+            "cost": 8
+          },
+          {
+            "tier": 4,
+            "description": "Increased chance to sway LBs",
+            "cost": 8
+          }
+        ]
+      },
+      {
+        "name": "Secondary (DB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "DB's take less time to fully scout",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "Increase starting interest from DB's",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "DB transfers are more interested",
+            "cost": 8
+          },
+          {
+            "tier": 4,
+            "description": "Increased chance to sway DBs",
+            "cost": 8
+          }
+        ]
+      },
+      {
+        "name": "Specialist (K/P)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "K/P's take less time to fully scout",
+            "cost": 8
+          },
+          {
+            "tier": 2,
+            "description": "Increase starting interest from K/P's",
+            "cost": 8
+          },
+          {
+            "tier": 3,
+            "description": "K/P transfers are more interested",
+            "cost": 8
+          },
+          {
+            "tier": 4,
+            "description": "Increased chance to sway K/Ps",
+            "cost": 8
+          }
+        ]
+      }
+    ]
+  },
+  "Elite Recruiter": {
+    "type": "advanced",
+    "unlockRequirements": [
+      {
+        "Recruiter": "50"
+      }
+    ],
+    "colour": "#692F3D",
+    "treeUnlockCost": null,
+    "index": 5,
+    "categories": [
+      {
+        "name": "Passing Game (QB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boost to ideal pitch grades for QB's",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "My School grades have a larger impact on QB's",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Recruiting actions have bigger impacts on QB's",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Increase weekly recruiting hours for QB's",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Running Game (RB/FB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boost to ideal pitch grades for RB's",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "My School grades have a larger impact on RB's",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Recruiting actions have bigger impacts on RB's",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Increase weekly recruiting hours for RB's",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Recieving Game (WR/TE)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boost to ideal pitch grades for WR/TE's",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "My School grades have a larger impact on WR/TE's",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Recruiting actions have bigger impacts on WR/TE's",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Increase weekly recruiting hours for WR/TE's",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Blocking (OL)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boost to ideal pitch grades for OL",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "My School grades have a larger impact on OL",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Recruiting actions have bigger impacts on OL",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Increase weekly recruiting hours for OL",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Defensive Line (DL)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boost to ideal pitch grades for DL",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "My School grades have a larger impact on DL",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Recruiting actions have bigger impacts on DL",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Increase weekly recruiting hours for DL",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Linebackers (LB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boost to ideal pitch grades for LB's",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "My School grades have a larger impact on LB's",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Recruiting actions have bigger impacts on LB's",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Increase weekly recruiting hours for LB's",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Secondary (DB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boost to ideal pitch grades for DB's",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "My School grades have a larger impact on DB's",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Recruiting actions have bigger impacts on DB's",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Increase weekly recruiting hours for DB's",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Specialist (K/P)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boost to ideal pitch grades for K/Ps",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "My School grades have a larger impact on K/Ps",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Recruiting actions have bigger impacts on K/Ps",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Increase weekly recruiting hours for K/Ps",
+            "cost": 12
+          }
+        ]
+      }
+    ]
+  },
+  "Talent Developer": {
+    "type": "crossover",
+    "unlockRequirements": [
+      {
+        "Recruiter": "50",
+        "Motivator": "50"
+      }
+    ],
+    "colour": "#0f5e0c",
+    "treeUnlockCost": null,
+    "index": 6,
+    "categories": [
+      {
+        "name": "Passing Game (QB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Bonus XP for QBs when QBs are drafted",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "Freshman and Sophomore QBs progress faster",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Starting QB will gain XP faster",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Boost to pipeline bonus for QBs",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Running Game (RB/FB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Bonus XP for RBs when RBs are drafted",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "Freshman and Sophomore RBs progress faster",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Starting RB will gain XP faster",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Boost to pipeline bonus for RBs",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Recieving Game (WR/TE)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Bonus XP for WR/TEs when WR/TEs are drafted",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "Freshman and Sophomore WR/TEs progress faster",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Starting WR/TE will gain XP faster",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Boost to pipeline bonus for WR/TEs",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Blocking (OL)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Bonus XP for OL when OL are drafted",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "Freshman and Sophomore OLs progress faster",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Starting OL will gain XP faster",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Boost to pipeline bonus for OLs",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Defensive Line (DL)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Bonus XP for DLs when DLs are drafted",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "Freshman and Sophomore DLs progress faster",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Starting DL will gain XP faster",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Boost to pipeline bonus for DLs",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Linebackers (LB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Bonus XP for LBs when LBs are drafted",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "Freshman and Sophomore LBs progress faster",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Starting LBs will gain XP faster",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Boost to pipeline bonus for LBs",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Secondary (DB)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Bonus XP for DBs when DBs are drafted",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "Freshman and Sophomore DBs progress faster",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Starting DBs will gain XP faster",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Boost to pipeline bonus for DBs",
+            "cost": 12
+          }
+        ]
+      },
+      {
+        "name": "Specialist (K/P)",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Bonus XP for K/Ps when K/Ps are drafted",
+            "cost": 12
+          },
+          {
+            "tier": 2,
+            "description": "Freshman and Sophomore K/Ps progress faster",
+            "cost": 12
+          },
+          {
+            "tier": 3,
+            "description": "Starting K/P will gain XP faster",
+            "cost": 12
+          },
+          {
+            "tier": 4,
+            "description": "Boost to pipeline bonus for K/Ps",
+            "cost": 12
+          }
+        ]
+      }
+    ]
+  },
+  "Program Builder": {
+    "type": "elite",
+    "unlockRequirements": [
+      {
+        "Any": "125"
+      }
+    ],
+    "colour": "#CDD2D6",
+    "treeUnlockCost": 30,
+    "categories": [
+      {
+        "name": "Coaching Family",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Coordinators are less likely to leave in the coaching carousel",
+            "cost": 16
+          },
+          {
+            "tier": 2,
+            "description": "Coordinators are more likely to accept your job offer",
+            "cost": 16
+          },
+          {
+            "tier": 3,
+            "description": "Increase the caliber of the coordinators available for you to hire",
+            "cost": 16
+          }
+        ]
+      },
+      {
+        "name": "Set the Tone",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Increased HFA composure penalties for away team at home",
+            "cost": 16
+          },
+          {
+            "tier": 2,
+            "description": "Protection from HFA composure penalties on road",
+            "cost": 16
+          },
+          {
+            "tier": 3,
+            "description": "Increased protection from HFA composure effects in rivalry games",
+            "cost": 16
+          }
+        ]
+      },
+      {
+        "name": "Roster Retention",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "3rd-7th round projected players are less likely to leave for the NFL",
+            "cost": 16
+          },
+          {
+            "tier": 2,
+            "description": "2nd round projected players are less likely to leave for the NFL",
+            "cost": 16
+          },
+          {
+            "tier": 3,
+            "description": "1st round projected players are less likely to leave for the NFL",
+            "cost": 16
+          }
+        ]
+      },
+      {
+        "name": "High Integrity",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Gain 3 additional persuade attempts per season",
+            "cost": 16
+          },
+          {
+            "tier": 2,
+            "description": "Persuades have a higher success rate",
+            "cost": 16
+          },
+          {
+            "tier": 3,
+            "description": "Successful persuades refund the attempt",
+            "cost": 16
+          }
+        ]
+      },
+      {
+        "name": "Strong Roots",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Boosts to your primary pipeline",
+            "cost": 16
+          },
+          {
+            "tier": 2,
+            "description": "Boost to starting interest for recruits from your primary pipeline",
+            "cost": 16
+          },
+          {
+            "tier": 3,
+            "description": "Recruits from your primary pipeline gain extra influence boosts",
+            "cost": 16
+          }
+        ]
+      },
+      {
+        "name": "Relationship Builder",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Upgrade your school's best two pipelines by one tier",
+            "cost": 16
+          },
+          {
+            "tier": 2,
+            "description": "Upgrades your school's five best pipelines by one tier",
+            "cost": 16
+          },
+          {
+            "tier": 3,
+            "description": "Upgrades your school's five worst pipelines by one tier",
+            "cost": 16
+          }
+        ]
+      },
+      {
+        "name": "Inside Track",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Earn 25% more XP from all completed goals",
+            "cost": 16
+          },
+          {
+            "tier": 2,
+            "description": "Able to see other school's At Risk players on My School",
+            "cost": 16
+          },
+          {
+            "tier": 3,
+            "description": "Archetypes are 20CP cheaper for each coach that owns that Archetype",
+            "cost": 16
+          }
+        ]
+      }
+    ]
+  },
+  "CEO": {
+    "type": "elite",
+    "unlockRequirements": [
+      {
+        "Any": "200"
+      }
+    ],
+    "colour": "#C2B064",
+    "treeUnlockCost": 35,
+    "categories": [
+      {
+        "name": "Gainz Getter",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Increase the chance that a player upgrades their dev trait",
+            "cost": 16
+          }
+        ]
+      },
+      {
+        "name": "Second Chance Keeper",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Spend a second persuade on a player if the first fails",
+            "cost": 16
+          }
+        ]
+      },
+      {
+        "name": "Lasting Impressions",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Gain additional interest for every 10 hours spent",
+            "cost": 16
+          }
+        ]
+      },
+      {
+        "name": "More The Merrier",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Increase the number of players who can visit in a week to 8",
+            "cost": 16
+          }
+        ]
+      },
+      {
+        "name": "Gasoline",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Players start hot in top 5/rivalry/bowl/championship games",
+            "cost": 16
+          }
+        ]
+      },
+      {
+        "name": "Last Damce",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Bonus Interest for every visit a player has taken before visiting you",
+            "cost": 16
+          }
+        ]
+      },
+      {
+        "name": "Dream School",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Chance at instant commit when offering scholarship as their top school",
+            "cost": 16
+          }
+        ]
+      },
+      {
+        "name": "Bundle Discount",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Coach abilities are 2CP less for every coach on your staff with that ability",
+            "cost": 16
+          }
+        ]
+      },
+      {
+        "name": "Senior Superlatives",
+        "skills": [
+          {
+            "tier": 1,
+            "description": "Increase all skill group caps by one for rising Seniors",
+            "cost": 16
+          }
+        ]
+      }
+    ]
   }
+}

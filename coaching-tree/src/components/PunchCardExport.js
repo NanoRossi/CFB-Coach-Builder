@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import html2canvas from "html2canvas";
-import skillData from "./skills.json";
-import "./PunchCardExport.css";
+import skillData from "../skills.json";
+import "../css/PunchCardExport.css";
 
 export default function PunchCardExport({ unlockedTiers, skillPoints }) {
     const cardRef = useRef(null);
