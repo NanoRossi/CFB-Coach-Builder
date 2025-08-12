@@ -26,10 +26,10 @@ function useLocalStorageState(key) {
 function App() {
     const initialBase = 1000;
     const preorderBonusSkillPoints = 100;
-    const [baseValue, setBaseValue] = useState(initialBase);
+    const [baseValue] = useState(initialBase);
     const [isPreorderEnabled, setIsPreorderEnabled] = useState(false);
     const [includeCoordinators, setIncludeCoordinators] = useState(false);
-    const [deductions, setDeductions] = useState([]);
+    const [deductions] = useState([]);
     const [darkMode, setDarkMode] = useState(false);
     const [savedDarkMode, setSavedDarkMode] = useLocalStorageState('darkMode', false);
 

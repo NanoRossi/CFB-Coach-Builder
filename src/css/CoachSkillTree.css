@@ -2,7 +2,9 @@
 
 
 .coach-skill-tree {
-  min-width: 800px;
+  max-width: 100%;
+  width: 800px;
+  min-width: 0;
   margin: 1rem auto;
   font-family: var(--font-family);
 }

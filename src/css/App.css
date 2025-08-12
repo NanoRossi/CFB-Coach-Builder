@@ -5,5 +5,6 @@
   display: flex;
   flex-direction: column;
   background-color: var(--color-bg);
-  min-width: 800px;
+  max-width: 100%;
+  min-width: 0;
 }

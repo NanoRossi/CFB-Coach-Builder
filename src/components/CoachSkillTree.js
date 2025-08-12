@@ -20,11 +20,10 @@ export default function CoachSkillTree({ isPreorderEnabled, data, setData }) {
   const availableSkillPoints = basePoints + totalDeductions + (isPreorderEnabled ? preorderBonusSkillPoints : 0);
 
   useEffect(() => {
-    if (startingTree) {
-      console.log(`Setting initial tree: ${startingTree}`);
+    if (startingTree && !data.unlockedTrees.includes(startingTree)) {
       setData({ ...data, unlockedTrees: [startingTree] });
     }
-  }, [startingTree]);
+  }, [startingTree, data, setData]);
 
   const handleHeaderClick = (treeId, isDisabled) => {
     if (isDisabled) return;
