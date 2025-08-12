@@ -1,6 +1,5 @@
 @import './RootStyles.css';  /* assuming your :root vars are here */
 
-
 .folder-view {
   background: var(--color-bg);
   border-radius: 12px;
@@ -20,6 +19,8 @@
   margin: 16px 0 0 0;
   border-bottom: 2px solid var(--color-border-strong);
   padding-bottom: 8px;
+  overflow-x: auto;  /* allow horizontal scroll on small screens */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
 }
 
 .tabs-header button {
@@ -35,6 +36,7 @@
   white-space: nowrap;
   user-select: none;
   border-bottom: 2px solid transparent;
+  flex-shrink: 0;  /* prevent shrinking inside flex container */
 }
 
 .tabs-header button:hover {
@@ -58,4 +60,28 @@
   margin-top: -2px;
   max-width: 100%;
   min-width: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .folder-view {
+    margin: 10px 10px;
+    padding: 0 10px 15px 10px;
+  }
+
+  .tabs-header {
+    gap: 8px;
+    margin: 12px 0 0 0;
+    padding-bottom: 6px;
+  }
+
+  .tabs-header button {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+
+  .tabs-content {
+    padding: 15px 10px;
+    min-height: 150px;
+  }
 }
