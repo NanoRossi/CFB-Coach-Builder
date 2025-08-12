@@ -1,319 +1,191 @@
-/* Reset some defaults */
-* {
-  box-sizing: border-box;
-}
+@import './RootStyles.css';  /* assuming your :root vars are here */
+
 
 .coach-skill-tree {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #222;
-  background: #f7f9fc;
-  padding: 2rem;
-  min-height: 100vh;
+  min-width: 800px;
+  margin: 1rem auto;
+  font-family: var(--font-family);
 }
 
-/* Tree wrapper with responsive grid */
 .tree-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-/* Tree container cards */
-.tree-container {
-  background: white;
-  border-radius: 1.25rem;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-  padding: 1.5rem 2rem;
   display: flex;
   flex-direction: column;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  cursor: default;
-  position: relative;
-  user-select: none;
-  border: 3px solid transparent;
-}
-
-.tree-container:hover {
-  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
-  transform: translateY(-4px);
-}
-
-/* Expanded tree styling */
-.tree-container.expanded {
-  grid-column: span 2;
-  cursor: auto;
-}
-
-/* Header & title */
-.tree-container h2 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 700;
-  font-size: 1.35rem;
-  margin-bottom: 0.6rem;
-  color: #1a1a1a;
-}
-
-.tree-container h2 button {
-  background: transparent;
-  border: none;
-  font-weight: 600;
-  color: var(--primary-green, #28a745);
-  cursor: pointer;
-  padding: 0.25rem 0.5rem;
-  border-radius: 6px;
-  transition: background-color 0.2s ease;
-}
-
-.tree-container h2 button:hover {
-  background-color: rgba(40, 167, 69, 0.1);
-}
-
-/* Points invested text */
-.tree-container > p {
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 1rem;
-}
-
-/* Unlock requirements */
-.unlock-requirements {
-  margin-bottom: 1.5rem;
-  padding-top: 1rem;
-}
-
-.unlock-requirements h4 {
-  font-weight: 600;
-  font-size: 1rem;
-  color: #444;
-  margin-bottom: 0.8rem;
-}
-
-.requirement p {
-  margin: 0 0 0.2rem 0;
-  font-size: 0.9rem;
-  color: #666;
-}
-
-/* Progress bar */
-.progress-bar {
-  width: 100%;
-  height: 10px;
-  background-color: #eaeaea;
-  border-radius: 20px;
-  overflow: hidden;
-  margin-bottom: 0.8rem;
-  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.6);
-}
-
-.progress-fill {
-  height: 100%;
-  transition: width 0.3s ease-in-out;
-  border-radius: 20px;
-  background: linear-gradient(90deg, #28a745 0%, #85d57d 100%);
-}
-
-/* Buttons */
-button {
-  font-family: inherit;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 0.45rem 1rem;
-  cursor: pointer;
-  transition: background-color 0.25s ease, box-shadow 0.25s ease;
-  user-select: none;
-}
-
-button:disabled {
-  background-color: #ccc;
-  color: #777;
-  cursor: not-allowed;
-  box-shadow: none;
-}
-
-/* Unlock tree button */
-.tree-container > button {
-  background-color: var(--primary-green, #28a745);
-  margin-top: auto;
-  align-self: flex-start;
-  box-shadow: 0 6px 12px rgba(40, 167, 69, 0.35);
-}
-
-.tree-container > button:hover:not(:disabled) {
-  background-color: #218838;
-  box-shadow: 0 8px 20px rgba(33, 136, 56, 0.6);
-}
-
-/* Common button styles */
-.skill-button {
-  margin-right: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.35);
-  border: none;
-  padding: 0.5rem 1.25rem; /* more horizontal padding for consistent sizing */
-  border-radius: var(--border-radius);
-  font-weight: 600;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-
-  /* Align text */
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  white-space: nowrap;
-  min-height: 20%;
-  width: 100%;
-  border-radius: 12px;
-}
-
-.skill-button:disabled {
-  cursor: not-allowed;
-  opacity: 0.6;
-  box-shadow: none;
-}
-
-
-/* Add skill specific colors */
-.add-skill-button {
-  background-color: #0be54c;
-}
-
-.add-skill-button:hover:not(:disabled) {
-  background-color: hwb(121 5% 13%);
-  box-shadow: 0 6px 16px rgba(0, 86, 179, 0.6);
-}
-
-/* Remove skill specific colors */
-.remove-skill-button {
-  background-color: #dc3545;
-}
-
-.remove-skill-button:hover:not(:disabled) {
-  background-color: #a71d2a;
-  box-shadow: 0 6px 16px rgba(167, 29, 42, 0.6);
-}
-
-/* Skill section */
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1rem;
-  padding-top: 0.5rem;
 }
 
-.category {
-  background-color: #fafafa;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  display: flex;
-  flex-direction: column;
-}
-
-.category h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-/* Individual skills */
-.skill {
-  margin-bottom: 1rem;
-}
-
-.skill p {
-  font-size: 0.9rem;
-  margin-bottom: 0.4rem;
-  color: #444;
-}
-
-.skill button {
-  min-width: 100px;
-}
-
-/* Responsive tweaks */
-@media (max-width: 640px) {
-  .tree-wrapper {
-    grid-template-columns: 1fr;
-  }
-  .tree-container.expanded {
-    grid-column: span 1;
-  }
+.tree-container {
+  border: 2px solid var(--color-tree-border);
+  border-radius: var(--border-radius);
+  background-color: var(--color-tree-bg);
+  box-shadow: 0 4px 6px var(--color-shadow-light);
+  overflow: hidden;
+  transition: border-color var(--transition-speed) ease;
 }
 
 .tree-header {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem 1rem;
   align-items: center;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid #eee;
+  justify-content: space-between;
+  background-color: var(--color-tree-header-bg);
+  padding: 1rem;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid var(--color-tree-header-border);
+}
+
+.tree-header[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: default;
 }
 
 .tree-header h2 {
-  flex: 1 1 auto;
-  font-weight: 700;
+  font-size: 1.3rem;
   margin: 0;
-  font-size: 1rem;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 1rem;
+  flex-grow: 1;
+  color: var(--color-tree-text);
 }
 
-.tree-header h2 button {
-  font-size: 0.85rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 6px;
+.tree-header button {
+  padding: 0.35rem 0.8rem;
+  font-size: 1rem;
+  border-radius: 5px;
   border: none;
-  background-color: var(--primary-green, #28a745);
+  background-color: var(--color-button-primary-bg);
   color: white;
   cursor: pointer;
-  transition: background-color 0.25s ease;
+  transition: background-color 0.2s ease;
 }
 
-.tree-header h2 button:hover {
-  background-color: #218838;
+.tree-header button:disabled {
+  opacity: 0.5;
+  cursor: var(--color-button-disabled-cursor);
+  background-color: var(--color-button-disabled-bg);
 }
 
-.tree-header p {
-  flex: 0 0 auto;
-  margin: 0;
+.tree-header button:hover:not(:disabled) {
+  background-color: var(--color-button-primary-bg-hover);
+}
+
+.points-invested {
+  flex-basis: 100%;
+  margin-top: 0.5rem;
   font-weight: 600;
-  color: #555;
-  min-width: 110px;
+  color: var(--color-tree-text-strong);
 }
 
-.tree-header > button {
-  flex: 0 0 auto;
-  font-weight: 700;
-  font-size: 0.9rem;
-  padding: 0.4rem 1rem;
-  border-radius: 8px;
+.unlock-btn {
+  margin-top: 0.5rem;
+  background-color: var(--color-button-success-bg);
   border: none;
-  background-color: var(--primary-green, #28a745);
   color: white;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border-radius: 5px;
   cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.unlock-btn:disabled {
+  background-color: var(--color-button-disabled-bg);
+  cursor: var(--color-button-disabled-cursor);
+}
+
+.unlock-btn:hover:not(:disabled) {
+  background-color: var(--color-button-success-bg-hover);
+}
+
+.unlock-requirements {
+  padding: 0.75rem 1rem;
+  background-color: var(--color-unlock-req-bg);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--color-tree-header-border);
+  user-select: none;
+  color: var(--color-tree-text);
+}
+
+.requirement {
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  background-color: var(--color-progress-bg);
+  height: 10px;
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 2px;
+}
+
+.progress-fill {
+  height: 10px;
+  border-radius: 6px;
+  transition: width 0.4s ease;
+  background-color: var(--color-progress-fill-incomplete);
+}
+
+.progress-fill[style*="width: 100%"] {
+  background-color: var(--color-progress-fill-complete);
+}
+
+.tree-content {
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 1rem;
+}
+
+.tree-container.expanded .tree-content {
+  padding: 1rem;
+  max-height: 2000px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.category h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: var(--color-tree-text);
+}
+
+.skill {
+  margin-bottom: 0.75rem;
+}
+
+.skill-button {
+  margin: 0 0.25rem 0.25rem 0;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  color: white;
+  font-weight: 600;
   transition: background-color 0.25s ease;
-  white-space: nowrap;
 }
 
-.tree-header > h2 > button:disabled ,
-.tree-header > button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-  color: #666;
+.add-skill-button {
+  background-color: var(--color-button-success-bg);
 }
 
-.tree-header > button:hover:not(:disabled) {
-  background-color: #218838;
+.add-skill-button:disabled {
+  background-color: var(--color-button-disabled-bg);
+  cursor: var(--color-button-disabled-cursor);
+}
+
+.remove-skill-button {
+  background-color: var(--color-button-danger-bg);
+}
+
+.remove-skill-button:disabled {
+  background-color: var(--color-button-disabled-bg);
+  cursor: var(--color-button-disabled-cursor);
 }

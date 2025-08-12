@@ -15,11 +15,11 @@ function TreeTabWrapper({ includeCoordinators, isPreorderEnabled }) {
         allocatedPoints: {},
         // unlocked tiers and trees
         unlockedTiers: {},
-        unlockedTrees: [],
         // starting tree - we'll default to "Motivator", but maybe we should read from the data for this
+        unlockedTrees: ["Motivator"],
         startingTree: "Motivator",
         // tree's which have been opened
-        expandedTrees: {},
+        expandedTree: "",
         // points allocated to each individual tree
         pointsPerTree: {},
         // costs for each tree type
@@ -45,12 +45,25 @@ function TreeTabWrapper({ includeCoordinators, isPreorderEnabled }) {
     if (!includeCoordinators) {
         // If coordinators are not included, only show the Head Coach tab
         return (
-            <CoachSkillTree
-                title={tabs[0].title}
-                data={tabs[0].state}
-                setData={tabs[0].setState}
-                isPreorderEnabled={isPreorderEnabled}
-            />
+            <div className="folder-view">
+                <div className="tabs-header">
+                    <button
+                        onClick={() => setActiveTab(0)}
+                        className={activeTab === 0 ? "active" : ""}
+                    >
+                        {tabs[0].title}
+                    </button>
+                </div>
+
+                <div className="tabs-content">
+                    <CoachSkillTree
+                        title={tabs[0].title}
+                        data={tabs[0].state}
+                        setData={tabs[0].setState}
+                        {...(tabs[0].title === "Head Coach" ? { isPreorderEnabled } : false)}
+                    />
+                </div>
+            </div>
         );
     }
 
@@ -58,7 +71,7 @@ function TreeTabWrapper({ includeCoordinators, isPreorderEnabled }) {
     // Passing down the appropriate props to CoachSkillTree
     // And the head coach tab will get isPreorderEnabled
     return (
-        <div>
+        <div className="folder-view">
             <div className="tabs-header">
                 {tabs.map((tab, index) => (
                     <button

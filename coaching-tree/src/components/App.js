@@ -1,9 +1,8 @@
 // App.js
 import { useState, useEffect } from 'react';
-import '../css/App.css';
-
 import Header from './Header';
 import TreeTabsWrapper from './TreeTabWrapper';
+import '../css/App.css';
 
 // Custom hook to save dark mode state to localStorage
 // TODO, probably move this to a separate file
@@ -48,6 +47,7 @@ function App() {
         setIncludeCoordinators,
         darkMode,
         setDarkMode,
+        savedDarkMode,
         setSavedDarkMode
     };
 

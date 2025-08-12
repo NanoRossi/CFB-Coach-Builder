@@ -1,38 +1,59 @@
+@import './RootStyles.css';  /* assuming your :root vars are here */
+
+
+.folder-view {
+  background: var(--color-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px var(--color-shadow-light);
+  border: 1px solid var(--color-border);
+  margin: 20px auto;
+  padding: 0 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
 .tabs-header {
   display: flex;
   gap: 12px;
-  margin: 16px 0;
+  margin: 16px 0 0 0;
+  border-bottom: 2px solid var(--color-border-strong);
+  padding-bottom: 8px;
 }
 
 .tabs-header button {
-  background: rgba(0, 0, 0, 0.05);
-  color: #222;
+  background: var(--color-bg);
+  color: var(--color-text);
   border: none;
   padding: 8px 16px;
-  border-radius: 6px;
+  border-radius: 6px 6px 0 0;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
   white-space: nowrap;
   user-select: none;
+  border-bottom: 2px solid transparent;
 }
 
 .tabs-header button:hover {
-  background: rgba(0, 0, 0, 0.15);
+  background: var(--color-hover-bg);
 }
 
 .tabs-header button.active {
-  background: linear-gradient(90deg, #3b82f6, #1e40af);
-  color: white;
-  box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+  background: var(--color-bg);
+  color: var(--color-border-strong);
+  border-bottom: 2px solid var(--color-border-strong);
+  box-shadow: inset 0 -2px 0 var(--color-border-strong);
 }
 
 .tabs-content {
-  background: #f9fafb; /* very light grey */
+  background: var(--color-bg-light);
   padding: 20px;
-  border-radius: 8px;
-  color: #222;
-  min-height: 200px; /* adjust as needed */
-  box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+  border-radius: 0 0 12px 12px;
+  color: var(--color-text);
+  min-height: 200px;
+  box-shadow: inset 0 0 5px var(--color-shadow-dark);
+  margin-top: -2px;
+    min-width: 800px;
 }

@@ -1,129 +1,153 @@
+/* Header Container */
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 20px;
-    background: linear-gradient(90deg, #1f2937, #111827);
-    color: white;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    flex-wrap: wrap; /* allow wrapping when needed */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: linear-gradient(90deg, #1f2937, #111827); /* dark, modern */
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+  z-index: 1000;
 }
 
+/* Logo styling */
 .logo img {
-    height: 48px;
-    width: auto;
-    border-radius: 6px;
+  height: 48px;
+  width: auto;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(255,255,255,0.1);
+  transition: transform 0.3s ease;
 }
 
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+/* Title styles */
 .title h1 {
-    margin: 0;
-    font-size: 1.8rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  user-select: text;
 }
 
+/* Options container (collapsed/expanded) */
 .options {
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  transition: max-height 0.35s ease, padding 0.35s ease, opacity 0.35s ease;
   padding: 0 0;
   opacity: 0;
   pointer-events: none;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .options.open {
-  max-height: 500px; /* or big enough to show all options */
+  max-height: 500px; /* large enough for content */
   padding: 12px 0;
   opacity: 1;
   pointer-events: auto;
 }
 
+/* Options toggle button */
 .options-toggle-button {
-    min-width: 140px;  /* or whatever fits your longest text */
-    /* rest of your styles */
-    background: rgba(255, 255, 255, 0.05);
-    color: white;
-    border: none;
-    padding: 6px 10px;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    user-select: none;
-    white-space: nowrap;
-    transition: background-color 0.3s ease;
-    text-align: center;
+  min-width: 140px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  box-shadow: inset 0 0 5px rgba(255,255,255,0.1);
 }
 
 .options-toggle-button:hover,
 .options-toggle-button:focus {
-    background: rgba(255, 255, 255, 0.15);
-    outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  outline: none;
 }
 
 .options-toggle-button:active {
-    background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.25);
 }
 
+/* Individual option */
 .option {
-    font-size: 0.95rem;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 6px 10px;
-    border-radius: 6px;
-    white-space: nowrap;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  user-select: none;
+  box-shadow: inset 0 0 4px rgba(255,255,255,0.07);
 }
 
 .option input[type="checkbox"],
 .option .toggle {
-    cursor: pointer;
+  cursor: pointer;
 }
+
+/* Responsive adjustments */
 
 /* Tablet breakpoint */
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-    }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
 
-    .title h1 {
-        font-size: 1.5rem;
-        margin: 0;
-    }
+  .title h1 {
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+  }
 
-    .options {
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 8px;
-    }
+  .options {
+    gap: 8px;
+    margin-top: 8px;
+  }
 
-    .option {
-        font-size: 0.9rem;
-        padding: 5px 8px;
-    }
+  .option {
+    font-size: 0.9rem;
+    padding: 5px 8px;
+  }
 }
 
 /* Small mobile breakpoint */
 @media (max-width: 480px) {
-    .title h1 {
-        font-size: 1.3rem;
-    }
+  .title h1 {
+    font-size: 1.3rem;
+  }
 
-    .options {
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-    }
+  .options {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
 
-    .option {
-        width: 100%;
-        justify-content: space-between;
-    }
+  .option {
+    width: 100%;
+    justify-content: space-between;
+  }
 
-    .logo img {
-        height: 40px;
-    }
+  .logo img {
+    height: 40px;
+  }
 }

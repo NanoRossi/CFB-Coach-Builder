@@ -29,11 +29,6 @@ export default function TreeInfo({ availableSkillPoints, startingTree, data, set
                     Reset
                 </button>
             </div>
-            <div className="collapse-all-button">
-                <button onClick={() => TreeHelpers.CollapseAll(data, setData)}>
-                    Collapse All
-                </button>
-            </div>
         </div>
     );
 };

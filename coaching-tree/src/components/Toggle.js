@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../css/PreorderToggle.css'; // Import the CSS styling
+import '../css/Toggle.css'; // Import the CSS styling
 
 const Toggle = ({ checked = false, onChange }) => {
   const [isToggled, setIsToggled] = useState(checked);

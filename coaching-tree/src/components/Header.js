@@ -12,6 +12,7 @@ export default function Header({ options }) {
         setIncludeCoordinators,
         darkMode,
         setDarkMode,
+        savedDarkMode,
         setSavedDarkMode
     } = options;
 
@@ -19,12 +20,9 @@ export default function Header({ options }) {
 
     return (
         <div className="header">
-            <div className="logo">
-                <img src={"./26header.jpeg"} />
-            </div>
-
             <div className="title">
-                <h1>Coaching Tree Builder</h1>
+                <h1>EA Sports College Football 26</h1>
+                <h2>Coach Builder</h2>
             </div>
 
             <button
@@ -39,7 +37,7 @@ export default function Header({ options }) {
             <div id="options-panel" className={`options ${isOptionsOpen ? "open" : "closed"}`} aria-hidden={!isOptionsOpen} >
                 <div className="option">Toggle Preorder Bonus: <Toggle checked={isPreorderEnabled} onChange={() => setIsPreorderEnabled(!isPreorderEnabled)} /></div>
                 <div className="option">Include Coordinators: <Toggle checked={includeCoordinators} onChange={() => setIncludeCoordinators(!includeCoordinators)} /></div>
-                <div className="option">Dark Mode: <Toggle checked={darkMode} onChange={() => [setDarkMode(!darkMode), setSavedDarkMode(!darkMode)]} /></div>
+                <div className="option">Dark Mode: <Toggle checked={savedDarkMode || darkMode} onChange={() => [setDarkMode(!darkMode), setSavedDarkMode(!darkMode)]} /></div>
             </div>
         </div>
     );

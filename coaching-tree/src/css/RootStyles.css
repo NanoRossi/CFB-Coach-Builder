@@ -4,35 +4,95 @@
 :root {
   --color-bg: #ffffff;
   --color-text: #222222;
-  --color-primary: #007bff;
-  --color-secondary: #6c757d;
   --color-border: #cccccc;
   --color-border-strong: #2c5364;
-  --color-success: #28a745;
-  --color-danger: #dc3545;
-  --color-warning: #ffcc00;
-  --color-info: #17a2b8;
   --color-shadow: rgba(0, 0, 0, 0.15);
 
-  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --transition-speed: 0.3s;
   --border-radius: 8px;
+
+    /* Hover background for buttons and interactive elements */
+  --color-hover-bg: rgba(0, 0, 0, 0.15);
+
+  /* Focus border and shadow color for inputs/selects */
+  --color-focus: #28a745; /* your current primary-green */
+
+  /* Darker shade for active/hover states of primary buttons */
+  --color-primary-dark: #218838;
+
+  /* Light box shadow for elements in light mode */
+  --color-shadow-light: rgba(0, 0, 0, 0.12);
+
+  /* Subtle inset shadow for dark mode content panels */
+  --color-shadow-dark: rgba(255, 255, 255, 0.1);
+
+  /* Background for slightly lighter content area (tabs-content) */
+  --color-bg-light: #f9fafb;
+
+    --color-tree-border: #ccc;
+  --color-tree-border-strong: #007bff;
+  --color-tree-bg: #fefefe;
+  --color-tree-header-bg: #f0f0f0;
+  --color-tree-header-border: #ddd;
+  --color-tree-text: #222;
+  --color-tree-text-strong: #333;
+  --color-button-primary-bg: #007bff;
+  --color-button-primary-bg-hover: #0056b3;
+  --color-button-disabled-bg: #a0a0a0;
+  --color-button-success-bg: #28a745;
+  --color-button-success-bg-hover: #1e7e34;
+  --color-button-danger-bg: #dc3545;
+  --color-button-disabled-cursor: not-allowed;
+  --color-progress-bg: #eee;
+  --color-progress-fill-incomplete: red;
+  --color-progress-fill-complete: green;
+  --color-unlock-req-bg: #fafafa;
 }
 
 /* Dark mode overrides */
 .dark-mode {
-  --color-bg: #121212;
+  --color-bg: #111827;
   --color-text: #e0e0e0;
-  --color-primary: #3399ff;
-  --color-secondary: #a0a0a0;
   --color-border: #444444;
   --color-border-strong: #5599cc;
-  --color-success: #4caf50;
-  --color-danger: #e57373;
-  --color-warning: #ffeb3b;
-  --color-info: #81d4fa;
   --color-shadow: rgba(0, 0, 0, 0.7);
+
+    /* Override hover background to a subtle white overlay */
+  --color-hover-bg: rgba(255, 255, 255, 0.1);
+
+  /* Focus border and shadow color */
+  --color-focus: #5599cc;
+
+  /* Darker shade of focus or primary for hover states */
+  --color-primary-dark: #3b82f6;
+
+  /* Dark mode shadows */
+  --color-shadow-light: rgba(0, 0, 0, 0.7);
+  --color-shadow-dark: rgba(255, 255, 255, 0.15);
+
+  /* Slightly lighter bg for panels on dark mode */
+  --color-bg-light: #1f2937;
+
+    --color-tree-border: #444444;
+  --color-tree-border-strong: #5599cc;
+  --color-tree-bg: #1f2937;
+  --color-tree-header-bg: #273549;
+  --color-tree-header-border: #444;
+  --color-tree-text: #e0e0e0;
+  --color-tree-text-strong: #cbd5e1;
+  --color-button-primary-bg: #3b82f6;
+  --color-button-primary-bg-hover: #1e40af;
+  --color-button-disabled-bg: #6c757d;
+  --color-button-success-bg: #559944;
+  --color-button-success-bg-hover: #3a6b29;
+  --color-button-danger-bg: #bb4444;
+  --color-button-disabled-cursor: not-allowed;
+  --color-progress-bg: #444;
+  --color-progress-fill-incomplete: #ff6b6b; /* lighter red */
+  --color-progress-fill-complete: #4ade80; /* lighter green */
+  --color-unlock-req-bg: #2a3548;
 }
 
 /* Apply base styles using variables */
@@ -48,19 +108,6 @@ html, body {
   min-height: 100vh;
 }
 
-/* Links */
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-  transition: color var(--transition-speed);
-}
-
-a:hover,
-a:focus {
-  color: var(--color-primary);
-  text-decoration: underline;
-}
-
 /* Buttons base */
 button {
   font-family: var(--font-family);
@@ -70,11 +117,6 @@ button {
   border-radius: var(--border-radius);
   border: none;
   cursor: pointer;
-}
-
-/* Borders */
-.border {
-  border: 1px solid var(--color-border);
 }
 
 /* Shadows */
