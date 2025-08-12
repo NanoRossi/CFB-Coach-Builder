@@ -1,7 +1,7 @@
 {
+  "homepage": "https://nanorossi.github.io/CFB-Coach-Builder",
   "name": "coaching-tree",
   "version": "1.0.0",
-  "homepage": ".",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
