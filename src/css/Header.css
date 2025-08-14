@@ -1,4 +1,4 @@
-/* Header Container */
+/* ===== Header Container ===== */
 .header {
   display: flex;
   align-items: center;
@@ -16,7 +16,7 @@
   min-width: 0;
 }
 
-/* Logo styling */
+/* ===== Logo styling ===== */
 .logo img {
   height: 48px;
   width: auto;
@@ -29,7 +29,7 @@
   transform: scale(1.05);
 }
 
-/* Title styles */
+/* ===== Title styles ===== */
 .title h1 {
   margin: 0;
   font-size: 1.8rem;
@@ -39,27 +39,29 @@
   user-select: text;
 }
 
-/* Options container (collapsed/expanded) */
+/* ===== Options container (collapsed/expanded) ===== */
 .options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.35s ease, padding 0.35s ease, opacity 0.35s ease;
-  padding: 0 0;
+  padding: 0;
   opacity: 0;
   pointer-events: none;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+  transition: max-height 0.35s ease, padding 0.35s ease, opacity 0.35s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .options.open {
-  max-height: 500px; /* large enough for content */
+  max-height: 1000px; /* large enough for content */
   padding: 12px 0;
   opacity: 1;
   pointer-events: auto;
 }
 
-/* Options toggle button */
+/* ===== Options toggle button ===== */
 .options-toggle-button {
   min-width: 140px;
   background: rgba(255, 255, 255, 0.05);
@@ -87,9 +89,9 @@
   background: rgba(255, 255, 255, 0.25);
 }
 
-/* Individual option */
+/* ===== Individual option ===== */
 .option {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -106,48 +108,33 @@
   cursor: pointer;
 }
 
-/* Responsive adjustments */
-
-/* Tablet breakpoint */
-@media (max-width: 768px) {
+/* ===== Mobile Portrait: stack options vertically ===== */
+@media (max-width: 480px) {
   .header {
     flex-direction: column;
     align-items: flex-start;
-    text-align: left;
-  }
-
-  .title h1 {
-    font-size: 1.5rem;
-    margin-bottom: 6px;
-  }
-
-  .options {
-    gap: 8px;
-    margin-top: 8px;
-  }
-
-  .option {
-    font-size: 0.9rem;
-    padding: 5px 8px;
-  }
-}
-
-/* Small mobile breakpoint */
-@media (max-width: 480px) {
-  .title h1 {
-    font-size: 1.3rem;
+    gap: 6px;
   }
 
   .options {
     flex-direction: column;
-    align-items: stretch;
+    gap: 6px;
   }
 
   .option {
-    justify-content: space-between;
+    flex: 1 1 100%;
+    min-width: 0;
   }
 
-  .logo img {
-    height: 40px;
+  .title h1 {
+    font-size: 1.4rem;
+    margin: 6px 0;
+    white-space: normal;
+  }
+
+  .options-toggle-button {
+    font-size: 0.85rem;
+    min-width: 80px;
+    padding: 4px 8px;
   }
 }

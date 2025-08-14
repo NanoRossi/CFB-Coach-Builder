@@ -3,7 +3,6 @@ import CoachSkillTree from "./CoachSkillTree";
 import '../css/TreeTabWrapper.css';
 
 function TreeTabWrapper({ includeCoordinators, isPreorderEnabled }) {
-
     // Base data structure
     const baseCoachData = {
         // initial points, these will be modified as the user interacts with the tree
@@ -37,9 +36,9 @@ function TreeTabWrapper({ includeCoordinators, isPreorderEnabled }) {
     const [defenseData, setDefenseData] = useState({ ...baseCoachData });
 
     const tabs = [
-        { title: "Head Coach", state: headCoachData, setState: setHeadCoachData },
-        { title: "Offensive Coordinator", state: offenseData, setState: setOffenseData },
-        { title: "Defensive Coordinator", state: defenseData, setState: setDefenseData },
+        { title: "HC", state: headCoachData, setState: setHeadCoachData },
+        { title: "OC", state: offenseData, setState: setOffenseData },
+        { title: "DC", state: defenseData, setState: setDefenseData },
     ];
 
     if (!includeCoordinators) {
@@ -60,7 +59,7 @@ function TreeTabWrapper({ includeCoordinators, isPreorderEnabled }) {
                         title={tabs[0].title}
                         data={tabs[0].state}
                         setData={tabs[0].setState}
-                        {...(tabs[0].title === "Head Coach" ? { isPreorderEnabled } : false)}
+                        {...(tabs[0].title === "HC" ? { isPreorderEnabled } : false)}
                     />
                 </div>
             </div>
@@ -89,7 +88,7 @@ function TreeTabWrapper({ includeCoordinators, isPreorderEnabled }) {
                     title={tabs[activeTab].title}
                     data={tabs[activeTab].state}
                     setData={tabs[activeTab].setState}
-                    {...(tabs[activeTab].title === "Head Coach" ? { isPreorderEnabled } : false)}
+                    {...(tabs[activeTab].title === "HC" ? { isPreorderEnabled } : false)}
                 />
             </div>
         </div>

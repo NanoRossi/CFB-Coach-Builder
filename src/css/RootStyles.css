@@ -2,12 +2,12 @@
 
 /* Define CSS variables for light theme */
 :root {
+  min-width: 0;
   --color-bg: #ffffff;
   --color-text: #222222;
   --color-border: #cccccc;
   --color-border-strong: #2c5364;
   --color-shadow: rgba(0, 0, 0, 0.15);
-
 
   --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --transition-speed: 0.3s;
@@ -31,7 +31,7 @@
   /* Background for slightly lighter content area (tabs-content) */
   --color-bg-light: #f9fafb;
 
-    --color-tree-border: #ccc;
+  --color-tree-border: #ccc;
   --color-tree-border-strong: #007bff;
   --color-tree-bg: #fefefe;
   --color-tree-header-bg: #f0f0f0;
@@ -59,7 +59,7 @@
   --color-border-strong: #5599cc;
   --color-shadow: rgba(0, 0, 0, 0.7);
 
-    /* Override hover background to a subtle white overlay */
+  /* Override hover background to a subtle white overlay */
   --color-hover-bg: rgba(255, 255, 255, 0.1);
 
   /* Focus border and shadow color */
@@ -75,7 +75,7 @@
   /* Slightly lighter bg for panels on dark mode */
   --color-bg-light: #1f2937;
 
-    --color-tree-border: #444444;
+  --color-tree-border: #444444;
   --color-tree-border-strong: #5599cc;
   --color-tree-bg: #1f2937;
   --color-tree-header-bg: #273549;
@@ -106,6 +106,7 @@ html, body {
               color var(--transition-speed) ease;
   height: 100%;
   min-height: 100vh;
+   overflow-x: hidden; /* prevent side gap/scrollbar */ 
 }
 
 /* Buttons base */
@@ -148,11 +149,4 @@ button {
 :focus-visible {
   outline: 3px solid var(--color-warning);
   outline-offset: 2px;
-}
-
-/* Responsive container */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
 }
