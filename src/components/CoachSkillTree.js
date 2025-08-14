@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import skillData from "../skills.json";
 import TreeHelpers from "./TreeHelpers";
 import TreeInfo from "./TreeInfo";
+import SkillDisplay from "./SkillDisplay";
 import "../css/CoachSkillTree.css";
 
 export default function CoachSkillTree({ isPreorderEnabled, data, setData }) {
@@ -11,6 +12,7 @@ export default function CoachSkillTree({ isPreorderEnabled, data, setData }) {
     deductions,
     allocatedPoints,
     unlockedTrees,
+    unlockedTiers,
     startingTree,
     expandedTree,
     pointsPerTree,
@@ -43,7 +45,7 @@ export default function CoachSkillTree({ isPreorderEnabled, data, setData }) {
 
   return (
     <div className="coach-skill-tree">
-      <TreeInfo availableSkillPoints={availableSkillPoints} startingTree={startingTree} data={data} setData={setData} />
+      <TreeInfo availableSkillPoints={availableSkillPoints} startingTree={startingTree} data={data} setData={setData} unlockedTiers={unlockedTiers} />
 
       <div className="tree-wrapper">
         {Object.entries(skillData).map(([treeId, tree]) => {
@@ -51,6 +53,16 @@ export default function CoachSkillTree({ isPreorderEnabled, data, setData }) {
           const isUnlocked = unlockedTrees.includes(treeId);
           const isExpanded = expandedTree === treeId;
           const expandButtonDisabled = !isUnlocked;
+
+          const requirementsMet = tree.unlockRequirements.every(req =>
+            Object.entries(req).every(([requiredTree, requiredPoints]) => {
+              const currentPoints =
+                requiredTree === "Any"
+                  ? Math.max(...Object.values(pointsPerTree), 0)
+                  : pointsPerTree[requiredTree] || 0;
+              return currentPoints >= requiredPoints;
+            })
+          );
 
           return (
             <div
@@ -106,7 +118,7 @@ export default function CoachSkillTree({ isPreorderEnabled, data, setData }) {
 
                 {!isUnlocked && (
                   <button
-                    className="unlock-btn"
+                    className={`unlock-btn ${requirementsMet ? "unlocked" : "locked"}`}
                     onClick={(e) => {
                       e.stopPropagation();
                       TreeHelpers.UnlockTree({
@@ -118,7 +130,7 @@ export default function CoachSkillTree({ isPreorderEnabled, data, setData }) {
                         availableSkillPoints,
                       });
                     }}
-                    disabled={isUnlocked}
+                    disabled={isUnlocked || !requirementsMet || availableSkillPoints < TreeHelpers.GetTreeCost({ tree, data })}
                     aria-disabled={isUnlocked}
                   >
                     Unlock Tree (Cost: {startingTree === treeId ? 0 : TreeHelpers.GetTreeCost({ tree, data })} Points)
@@ -127,7 +139,7 @@ export default function CoachSkillTree({ isPreorderEnabled, data, setData }) {
               </div>
 
               {/* Unlock requirements always visible */}
-              {!isBasic && (
+              {!isBasic && !isUnlocked && (
                 <div className="unlock-requirements">
                   <h4>Unlock Requirements:</h4>
                   {tree.unlockRequirements.map((req, idx) =>
@@ -156,43 +168,20 @@ export default function CoachSkillTree({ isPreorderEnabled, data, setData }) {
                 </div>
               )}
 
-              {/* Accordion content panel */}
               <div
                 className="tree-content"
                 aria-hidden={!isExpanded}
                 style={{ maxHeight: isExpanded ? "2000px" : "0px" }}
               >
                 {isUnlocked && isExpanded && (
-                  <div className="category-grid">
-                    {tree.categories.map((category, categoryIndex) => (
-                      <div key={categoryIndex} className="category">
-                        <h3>{category.name}</h3>
-                        {category.skills.map((skill, skillIndex) => (
-                          <div key={skillIndex} className="skill">
-                            <p>
-                              <strong>Tier {skill.tier}:</strong> {skill.description}
-                            </p>
-                            <button
-                              onClick={() =>
-                                TreeHelpers.AllocateSkill(treeId, categoryIndex, skillIndex, data, setData, availableSkillPoints)
-                              }
-                              disabled={allocatedPoints[`${treeId}-${categoryIndex}-${skillIndex}`] || availableSkillPoints < skill.cost}
-                              className="skill-button add-skill-button"
-                            >
-                              Add Skill ({skill.cost} Points)
-                            </button>
-                            <button
-                              onClick={() => TreeHelpers.DeallocateSkill(treeId, categoryIndex, skillIndex, data, setData)}
-                              disabled={!allocatedPoints[`${treeId}-${categoryIndex}-${skillIndex}`]}
-                              className="skill-button remove-skill-button"
-                            >
-                              Remove Skill
-                            </button>
-                          </div>
-                        ))}
-                      </div>
-                    ))}
-                  </div>
+                  <SkillDisplay
+                    tree={tree}
+                    treeId={treeId}
+                    data={data}
+                    setData={setData}
+                    availableSkillPoints={availableSkillPoints}
+                    allocatedPoints={allocatedPoints}
+                  />
                 )}
               </div>
             </div>

@@ -1,8 +1,9 @@
 import skillData from '../skills.json';
 import TreeHelpers from './TreeHelpers';
+import PunchCardExport from './PunchCardExport';
 import "../css/TreeInfo.css";
 
-export default function TreeInfo({ availableSkillPoints, startingTree, data, setData }) {
+export default function TreeInfo({ availableSkillPoints, startingTree, data, setData, unlockedTiers }) {
     return (
         <div className="tree-info">
             <div className="skill-points">
@@ -24,11 +25,18 @@ export default function TreeInfo({ availableSkillPoints, startingTree, data, set
                         ))}
                 </select>
             </div>
-            <div className="reset-button">
+            <div className="action-button">
                 <button onClick={() => TreeHelpers.ResetData(startingTree, data, setData)}>
                     Reset
                 </button>
             </div>
-        </div>
+            <div className="action-button">
+                <PunchCardExport
+                    skillData={skillData}
+                    unlockedTiers={unlockedTiers}
+                    skillPoints={availableSkillPoints}
+                />
+            </div>
+        </div >
     );
 };

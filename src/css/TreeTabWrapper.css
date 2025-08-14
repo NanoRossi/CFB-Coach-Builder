@@ -1,4 +1,4 @@
-@import './RootStyles.css';  /* assuming your :root vars are here */
+@import './RootStyles.css';
 
 .folder-view {
   background: var(--color-bg);

@@ -1,4 +1,4 @@
-@import './RootStyles.css';  /* assuming your :root vars are here */
+@import './RootStyles.css';
 
 
 .coach-skill-tree {
@@ -36,11 +36,6 @@
   border-bottom: 1px solid var(--color-tree-header-border);
 }
 
-.tree-header[aria-disabled="true"] {
-  opacity: 0.6;
-  cursor: default;
-}
-
 .tree-header h2 {
   font-size: 1.3rem;
   margin: 0;
@@ -49,27 +44,6 @@
   gap: 1rem;
   flex-grow: 1;
   color: var(--color-tree-text);
-}
-
-.tree-header button {
-  padding: 0.35rem 0.8rem;
-  font-size: 1rem;
-  border-radius: 5px;
-  border: none;
-  background-color: var(--color-button-primary-bg);
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.tree-header button:disabled {
-  opacity: 0.5;
-  cursor: var(--color-button-disabled-cursor);
-  background-color: var(--color-button-disabled-bg);
-}
-
-.tree-header button:hover:not(:disabled) {
-  background-color: var(--color-button-primary-bg-hover);
 }
 
 .points-invested {
@@ -92,6 +66,7 @@
   transition: background-color 0.2s ease;
 }
 
+.unlock-btn.locked,
 .unlock-btn:disabled {
   background-color: var(--color-button-disabled-bg);
   cursor: var(--color-button-disabled-cursor);

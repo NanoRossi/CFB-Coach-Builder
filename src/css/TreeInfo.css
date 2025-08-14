@@ -1,4 +1,4 @@
-@import './RootStyles.css';  /* assuming your :root vars are here */
+@import './RootStyles.css';
 
 .tree-info {
   background: var(--color-bg);
@@ -60,13 +60,13 @@
   box-shadow: 0 0 6px var(--color-focus);
 }
 
-.reset-button {
+.action-button {
   flex: 0 1 150px;
   display: flex;
   align-items: center;
 }
 
-.reset-button button {
+.action-button button {
   background-color: var(--color-border-strong);
   color: white;
   font-weight: 700;
@@ -81,7 +81,7 @@
   user-select: none;
 }
 
-.reset-button button:hover {
+.action-button button:hover {
   background-color: var(--color-primary-dark);
   box-shadow: 0 8px 20px rgba(27, 63, 80, 0.6); /* you can adjust or define a var for this */
 }
@@ -93,7 +93,7 @@
     gap: 1rem;
     align-items: left;
   }
-  .reset-button {
+  .action-button {
     flex: 1 1 100%;
   }
   .starting-tree,
