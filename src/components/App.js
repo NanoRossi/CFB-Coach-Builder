@@ -54,19 +54,6 @@ function App() {
     useEffect(() => {
         document.body.classList.toggle('dark-mode', darkMode);
         document.body.classList.toggle('light-mode', !darkMode);
-
-        const bgColor = getComputedStyle(document.documentElement)
-            .getPropertyValue('--color-tree-bg').trim();
-
-        const metaTheme = document.querySelector('meta[name="theme-color"]');
-        if (metaTheme) {
-            metaTheme.setAttribute('content', bgColor);
-        } else {
-            const meta = document.createElement('meta');
-            meta.name = "theme-color";
-            meta.content = bgColor;
-            document.head.appendChild(meta);
-        }
     }, [darkMode]);
 
     useEffect(() => {

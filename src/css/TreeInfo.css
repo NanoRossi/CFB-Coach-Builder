@@ -1,6 +1,7 @@
 @import './RootStyles.css';
 
 .tree-info {
+  transition: background-color var(--transition-speed) ease;
   background: var(--color-bg);
   padding: 1.5rem 2rem;
   border-radius: 1.25rem;
@@ -46,12 +47,13 @@
   border: 1.5px solid var(--color-border);
   font-size: 1rem;
   font-family: inherit;
-  transition: border-color var(--transition-speed) ease;
+  transition: border-color var(--transition-speed) ease, background-color var(--transition-speed) ease;;
   cursor: pointer;
   background: var(--color-bg);
   color: var(--color-text);
   max-width: 100%;
   min-width: 0;
+  
 }
 
 .starting-tree select:focus {

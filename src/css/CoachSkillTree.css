@@ -7,6 +7,7 @@
   min-width: 0;
   margin: 1rem auto;
   font-family: var(--font-family);
+  transition: background-color var(--transition-speed) ease;  
 }
 
 .tree-wrapper {
@@ -21,7 +22,7 @@
   background-color: var(--color-tree-bg);
   box-shadow: 0 4px 6px var(--color-shadow-light);
   overflow: hidden;
-  transition: border-color var(--transition-speed) ease;
+  transition: border-color var(--transition-speed) ease, background-color var(--transition-speed) ease;
 }
 
 .tree-header {
@@ -34,6 +35,7 @@
   cursor: pointer;
   user-select: none;
   border-bottom: 1px solid var(--color-tree-header-border);
+  transition: background-color var(--transition-speed) ease;
 }
 
 .tree-header h2 {
@@ -63,7 +65,7 @@
   border-radius: 5px;
   cursor: pointer;
   user-select: none;
-  transition: background-color 0.2s ease;
+  transition: background-color var(--transition-speed) ease;
 }
 
 .unlock-btn.locked,
@@ -101,7 +103,7 @@
 .progress-fill {
   height: 10px;
   border-radius: 6px;
-  transition: width 0.4s ease;
+  transition: width var(--transition-speed) ease;
   background-color: var(--color-progress-fill-incomplete);
 }
 
@@ -111,7 +113,7 @@
 
 .tree-content {
   overflow: hidden;
-  transition: max-height 0.4s ease;
+  transition: max-height var(--transition-speed) ease;
   padding: 0 1rem;
 }
 
@@ -146,7 +148,7 @@
   user-select: none;
   color: white;
   font-weight: 600;
-  transition: background-color 0.25s ease;
+  transition: background-color var(--transition-speed) ease;
 }
 
 .add-skill-button {

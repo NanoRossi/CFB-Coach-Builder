@@ -5,7 +5,7 @@
     background-color: #ccc;
     position: relative;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color var(--transition-speed);
   }
   
   .toggle-slider.on {
@@ -20,7 +20,7 @@
     position: absolute;
     top: 2px;
     left: 2px;
-    transition: transform 0.3s;
+    transition: transform var(--transition-speed);
   }
   
   .toggle-slider.on .slider-circle {

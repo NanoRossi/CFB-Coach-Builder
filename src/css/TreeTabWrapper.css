@@ -11,6 +11,7 @@
   flex-direction: column;
   max-width: 90%;
   min-width: 0;
+  transition: background-color var(--transition-speed) ease;
 }
 
 .tabs-header {
@@ -51,6 +52,7 @@
 }
 
 .tabs-content {
+  transition: background-color var(--transition-speed) ease;
   background: var(--color-bg-light);
   padding: 20px;
   border-radius: 0 0 12px 12px;
