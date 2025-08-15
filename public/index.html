@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fefefe">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1f2937">
-    <meta name="color-scheme" content="light dark">
+    <script>
+      const meta = document.createElement('meta');
+      meta.name = 'theme-color';
+      meta.content = '#1f2937'; // background color
+      document.head.appendChild(meta);
+    </script>
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/26thumb.png" />
