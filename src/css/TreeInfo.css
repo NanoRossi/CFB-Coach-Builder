@@ -62,6 +62,15 @@
   box-shadow: 0 0 6px var(--color-focus);
 }
 
+.button-wrapper {
+    display: flex;
+    gap: 12px;             
+    margin-top: 16px;      
+    flex-wrap: wrap;  
+    flex-basis: 100%;     
+    justify-content: flex-start;
+}
+
 .action-button {
   flex: 0 1 150px;
   display: flex;
@@ -79,7 +88,8 @@
   box-shadow: 0 6px 12px var(--color-shadow-light);
   transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
   width: 100%;
-  font-size: 0.95rem;
+  min-height: 30px;
+  font-size: 0.7rem;
   user-select: none;
 }
 

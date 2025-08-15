@@ -44,11 +44,59 @@ class TreeHelpers {
         });
     };
 
-    static DeallocateSkill(treeId, categoryIndex, skillIndex, data, setData) {
+    static GetTreeCost({ tree, data, indexMod }) {
+        // Determine the effective index, applying indexMod if provided
+        const baseIndex = tree.type === "basic" ? (data.baseIndex || 0) - (indexMod || 0) :
+            tree.type === "advanced" ? (data.advancedIndex || 0) - (indexMod || 0) :
+                tree.type === "crossover" ? (data.crossoverIndex || 0) - (indexMod || 0) :
+                    0;
+
+        let unlockCost = 0;
+
+        // standard trees have dynamic cost based upon how many of that type of tree you have unlocked
+        if (tree.type === "basic") {
+            unlockCost = data.baseTreeCosts[baseIndex] || 0;
+        } else if (tree.type === "advanced") {
+            unlockCost = data.advancedTreeCosts[baseIndex] || 0;
+        } else if (tree.type === "crossover") {
+            unlockCost = data.crossoverTreeCosts[baseIndex] || 0;
+        } else if (tree.type === "elite") {
+            // elite trees have a fixed cost
+            unlockCost = tree.treeUnlockCost || 0;
+        }
+
+        return unlockCost;
+    }
+
+    static UnlockTree({ treeId, skillData, data, setData, unlockCost, availableSkillPoints, requirementsMet }) {
+        const tree = skillData[treeId];
+        const unlockedTrees = data.unlockedTrees || [];
+
+        if (tree.type !== "basic") {
+
+            if (!requirementsMet) {
+                alert("You haven't met the requirements to unlock this advanced tree.");
+                return;
+            }
+        }
+
+        if (availableSkillPoints >= unlockCost && !unlockedTrees.includes(treeId)) {
+            setData(prev => ({
+                ...prev,
+                unlockedTrees: [...(prev.unlockedTrees || []), treeId],
+                deductions: [...(prev.deductions || []), -Math.abs(unlockCost)],
+                baseIndex: tree.type === "basic" ? (prev.baseIndex || 0) + 1 : prev.baseIndex,
+                advancedIndex: tree.type === "advanced" ? (prev.advancedIndex || 0) + 1 : prev.advancedIndex,
+                crossoverIndex: tree.type === "crossover" ? (prev.crossoverIndex || 0) + 1 : prev.crossoverIndex,
+            }));
+        }
+    };
+
+    static DeallocateSkill(treeId, categoryIndex, skillIndex, data) {
         const skill = skillData[treeId].categories[categoryIndex].skills[skillIndex];
         const key = `${treeId}-${categoryIndex}-${skillIndex}`;
 
-        if (!data.allocatedPoints[key]) return;
+        if (!data.allocatedPoints[key]) return data;
 
         let totalPointsRemoved = skill.cost;
         const updatedAllocatedPoints = { ...data.allocatedPoints };
@@ -56,7 +104,7 @@ class TreeHelpers {
 
         const currentTier = skill.tier;
 
-        // Recursively remove higher-tier skills in the same category
+        // Recursively remove higher-tier skills
         for (let nextSkillIndex = skillIndex + 1; nextSkillIndex < skillData[treeId].categories[categoryIndex].skills.length; nextSkillIndex++) {
             const nextSkill = skillData[treeId].categories[categoryIndex].skills[nextSkillIndex];
             const nextKey = `${treeId}-${categoryIndex}-${nextSkillIndex}`;
@@ -73,7 +121,6 @@ class TreeHelpers {
         let updatedUnlockedTiers = { ...data.unlockedTiers };
 
         if (skillIndex === 0) {
-            // Remove category tier entry if first skill is deallocated
             if (updatedUnlockedTiers[treeId]) {
                 const updatedCategories = { ...updatedUnlockedTiers[treeId] };
                 delete updatedCategories[categoryIndex];
@@ -99,7 +146,7 @@ class TreeHelpers {
             }
         }
 
-        setData({
+        return {
             ...data,
             allocatedPoints: updatedAllocatedPoints,
             deductions: [...data.deductions, Math.abs(totalPointsRemoved)],
@@ -108,65 +155,49 @@ class TreeHelpers {
                 [treeId]: Math.max((data.pointsPerTree?.[treeId] || 0) - totalPointsRemoved, 0),
             },
             unlockedTiers: updatedUnlockedTiers,
+        };
+    }
+
+    static LockTree({ treeId, data, unlockCost }) {
+        let tempData = { ...data };
+
+        // Deallocate all skills in this tree (pure)
+        const treeCategories = skillData[treeId]?.categories || [];
+        treeCategories.forEach((_, categoryIndex) => {
+            tempData = this.DeallocateSkill(treeId, categoryIndex, 0, tempData);
         });
-    }
 
-    static GetTreeCost({ tree, data }) {
-        // standard trees have dynamic cost based upon how many of that type of tree you have unlocked
-        let unlockCost = tree.type === "basic" ? data.baseTreeCosts[data.baseIndex] :
-            tree.type === "advanced" ? data.advancedTreeCosts[data.advancedIndex] :
-                tree.type === "crossover" ? data.crossoverTreeCosts[data.crossoverIndex] : 0;
+        // Remove tree from unlockedTrees
+        const updatedUnlockedTrees = (tempData.unlockedTrees || []).filter(id => id !== treeId);
+        // Remove the deduction for unlocking this tree
+        const target = -Math.abs(Number(unlockCost));
+        const updatedDeductions = [...(tempData.deductions || [])];
+        const index = updatedDeductions.findIndex(d => Number(d) === target);
+        if (index !== -1) updatedDeductions.splice(index, 1);
 
-        // elite trees have a fixed cost
-        if (tree.type === "elite") {
-            unlockCost = tree.treeUnlockCost;
-        }
-
-        return unlockCost;
-    }
-
-    static UnlockTree({ treeId, skillData, data, setData, unlockCost, availableSkillPoints }) {
+        // Only decrement the index for the type of tree we're locking
         const tree = skillData[treeId];
-        const pointsPerTree = data.pointsPerTree || {};
-        const unlockedTrees = data.unlockedTrees || [];
+        const updatedIndexes = {
+            baseIndex: tempData.baseIndex,
+            advancedIndex: tempData.advancedIndex,
+            crossoverIndex: tempData.crossoverIndex,
+        };
 
-        if (tree.type !== "basic") {
-            const meetsRequirements = tree.unlockRequirements.every((req) => {
-                if (Array.isArray(req)) {
-                    return req.every(([requiredTree, requiredPoints]) => {
-                        if (requiredTree === "Any") {
-                            return Math.max(...Object.values(pointsPerTree)) >= parseInt(requiredPoints, 10);
-                        } else {
-                            return (pointsPerTree[requiredTree] || 0) >= parseInt(requiredPoints, 10);
-                        }
-                    });
-                } else {
-                    const [requiredTree, requiredPoints] = Object.entries(req)[0];
-                    if (requiredTree === "Any") {
-                        return Math.max(...Object.values(pointsPerTree)) >= parseInt(requiredPoints, 10);
-                    } else {
-                        return (pointsPerTree[requiredTree] || 0) >= parseInt(requiredPoints, 10);
-                    }
-                }
-            });
-
-            if (!meetsRequirements) {
-                alert("You haven't met the requirements to unlock this advanced tree.");
-                return;
-            }
+        if (tree.type === "basic") {
+            updatedIndexes.baseIndex = Math.max((tempData.baseIndex || 0) - 1, 0);
+        } else if (tree.type === "advanced") {
+            updatedIndexes.advancedIndex = Math.max((tempData.advancedIndex || 0) - 1, 0);
+        } else if (tree.type === "crossover") {
+            updatedIndexes.crossoverIndex = Math.max((tempData.crossoverIndex || 0) - 1, 0);
         }
 
-        if (availableSkillPoints >= unlockCost && !unlockedTrees.includes(treeId)) {
-            setData(prev => ({
-                ...prev,
-                unlockedTrees: [...(prev.unlockedTrees || []), treeId],
-                deductions: [...(prev.deductions || []), -Math.abs(unlockCost)],
-                baseIndex: tree.type === "basic" ? (prev.baseIndex || 0) + 1 : prev.baseIndex,
-                advancedIndex: tree.type === "advanced" ? (prev.advancedIndex || 0) + 1 : prev.advancedIndex,
-                crossoverIndex: tree.type === "crossover" ? (prev.crossoverIndex || 0) + 1 : prev.crossoverIndex,
-            }));
-        }
-    };
+        return {
+            ...tempData,
+            unlockedTrees: updatedUnlockedTrees,
+            deductions: updatedDeductions,
+            ...updatedIndexes,
+        };
+    }
 
     static ToggleCollapse(treeId, data, setData) {
         const expandedTrees = data.expandedTrees || {};
@@ -209,6 +240,15 @@ class TreeHelpers {
             ...data,
             expandedTrees: {}
         });
+    }
+
+    static TreeMeetsRequirements(tree, pointsPerTree) {
+        return (tree.unlockRequirements || []).every(req => Object.entries(req).every(([requiredTree, requiredPoints]) => {
+            const currentPoints = requiredTree === "Any"
+                ? Math.max(...Object.values(pointsPerTree), 0)
+                : pointsPerTree[requiredTree] || 0;
+            return currentPoints >= requiredPoints;
+        }));
     }
 }
 

@@ -1,0 +1,32 @@
+.unlock-requirements {
+  padding: 0.75rem 1rem;
+  background-color: var(--color-unlock-req-bg);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--color-tree-header-border);
+  user-select: none;
+  color: var(--color-tree-text);
+}
+
+.requirement {
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  background-color: var(--color-progress-bg);
+  height: 10px;
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 2px;
+}
+
+.progress-fill {
+  height: 10px;
+  border-radius: 6px;
+  transition: width var(--transition-speed) ease;
+  background-color: var(--color-progress-fill-incomplete);
+}
+
+.progress-fill[style*="width: 100%"] {
+  background-color: var(--color-progress-fill-complete);
+}

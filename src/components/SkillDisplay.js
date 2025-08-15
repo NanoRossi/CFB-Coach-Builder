@@ -1,6 +1,6 @@
 import { useState } from "react";
 import TreeHelpers from "./TreeHelpers";
-
+import skillData from "../skills.json";
 import "../css/SkillDisplay.css";
 
 export default function SkillDisplay({ tree, treeId, data, setData, availableSkillPoints, allocatedPoints }) {
@@ -61,15 +61,39 @@ export default function SkillDisplay({ tree, treeId, data, setData, availableSki
                                             Add Skill ({skill.cost} Points)
                                         </button>
                                         <button
-                                            onClick={() =>
-                                                TreeHelpers.DeallocateSkill(
+                                            onClick={() => {
+                                                // Step 1: Deallocate the skill
+                                                const updatedData = TreeHelpers.DeallocateSkill(
                                                     treeId,
                                                     categoryIndex,
                                                     skillIndex,
-                                                    data,
-                                                    setData
-                                                )
-                                            }
+                                                    data
+                                                );
+
+                                                // Step 2: Re-check all other unlocked trees
+                                                let finalData = { ...updatedData };
+                                                (finalData.unlockedTrees || []).forEach(otherTreeId => {
+                                                    const tree = skillData[otherTreeId];
+
+                                                    if (tree.type === "basic") { return; } // basic tree's don't have unlock requirements 
+
+                                                    const pointsPerTree = finalData.pointsPerTree || {};
+
+                                                    // Check if unlock requirements are still met
+                                                    const requirementsMet = TreeHelpers.TreeMeetsRequirements(tree, pointsPerTree);
+
+                                                    // If not met, lock the tree
+                                                    if (!requirementsMet) {
+                                                        finalData = TreeHelpers.LockTree({
+                                                            treeId: otherTreeId,
+                                                            data: finalData,
+                                                            unlockCost: TreeHelpers.GetTreeCost({ tree, data: finalData, indexMod: 1 }) // only needed for deduction bookkeeping
+                                                        });
+                                                    }
+                                                });
+
+                                                setData(finalData);
+                                            }}
                                             disabled={!allocatedPoints[`${treeId}-${categoryIndex}-${skillIndex}`]}
                                             className="skill-button remove-skill-button"
                                         >

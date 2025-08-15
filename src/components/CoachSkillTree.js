@@ -3,6 +3,7 @@ import skillData from "../skills.json";
 import TreeHelpers from "./TreeHelpers";
 import TreeInfo from "./TreeInfo";
 import SkillDisplay from "./SkillDisplay";
+import UnlockRequirements from "./UnlockRequirements";
 import "../css/CoachSkillTree.css";
 
 export default function CoachSkillTree({ isPreorderEnabled, data, setData }) {
@@ -19,6 +20,7 @@ export default function CoachSkillTree({ isPreorderEnabled, data, setData }) {
   } = data;
 
   const totalDeductions = deductions.reduce((acc, val) => acc + val, 0);
+
   const availableSkillPoints = basePoints + totalDeductions + (isPreorderEnabled ? preorderBonusSkillPoints : 0);
 
   useEffect(() => {
@@ -53,16 +55,8 @@ export default function CoachSkillTree({ isPreorderEnabled, data, setData }) {
           const isUnlocked = unlockedTrees.includes(treeId);
           const isExpanded = expandedTree === treeId;
           const expandButtonDisabled = !isUnlocked;
-
-          const requirementsMet = tree.unlockRequirements.every(req =>
-            Object.entries(req).every(([requiredTree, requiredPoints]) => {
-              const currentPoints =
-                requiredTree === "Any"
-                  ? Math.max(...Object.values(pointsPerTree), 0)
-                  : pointsPerTree[requiredTree] || 0;
-              return currentPoints >= requiredPoints;
-            })
-          );
+          const unlockCost = TreeHelpers.GetTreeCost({ tree, data });
+          const requirementsMet = TreeHelpers.TreeMeetsRequirements(tree, pointsPerTree);
 
           return (
             <div
@@ -126,46 +120,20 @@ export default function CoachSkillTree({ isPreorderEnabled, data, setData }) {
                         skillData,
                         data,
                         setData,
-                        unlockCost: TreeHelpers.GetTreeCost({ tree, data }),
+                        unlockCost,
                         availableSkillPoints,
+                        requirementsMet
                       });
                     }}
-                    disabled={isUnlocked || !requirementsMet || availableSkillPoints < TreeHelpers.GetTreeCost({ tree, data })}
+                    disabled={isUnlocked || !requirementsMet || availableSkillPoints < unlockCost}
                     aria-disabled={isUnlocked}
                   >
-                    Unlock Tree (Cost: {startingTree === treeId ? 0 : TreeHelpers.GetTreeCost({ tree, data })} Points)
+                    Unlock Tree (Cost: {startingTree === treeId ? 0 : unlockCost} Points)
                   </button>
                 )}
               </div>
 
-              {/* Unlock requirements always visible */}
-              {!isBasic && !isUnlocked && (
-                <div className="unlock-requirements">
-                  <h4>Unlock Requirements:</h4>
-                  {tree.unlockRequirements.map((req, idx) =>
-                    Object.entries(req).map(([requiredTree, requiredPoints], innerIdx) => {
-                      const currentPoints =
-                        requiredTree === "Any"
-                          ? Math.max(...Object.values(pointsPerTree), 0)
-                          : pointsPerTree[requiredTree] || 0;
-                      const progress = Math.min((currentPoints / requiredPoints) * 100, 100);
-
-                      return (
-                        <div key={`${idx}-${innerIdx}`} className="requirement">
-                          <p>
-                            <strong>{requiredTree} Tree:</strong> {currentPoints} / {requiredPoints} Points
-                          </p>
-                          <div className="progress-bar">
-                            <div
-                              className="progress-fill"
-                              style={{ width: `${progress}%`, backgroundColor: progress === 100 ? "green" : "red" }}
-                            />
-                          </div>
-                        </div>
-                      );
-                    })
-                  )}
-                </div>
+              {!isBasic && !isUnlocked && (<UnlockRequirements tree={tree} pointsPerTree={pointsPerTree} />
               )}
 
               <div
@@ -173,7 +141,7 @@ export default function CoachSkillTree({ isPreorderEnabled, data, setData }) {
                 aria-hidden={!isExpanded}
                 style={{ maxHeight: isExpanded ? "2000px" : "0px" }}
               >
-                {isUnlocked && isExpanded && (
+                {isUnlocked && isExpanded && requirementsMet && (
                   <SkillDisplay
                     tree={tree}
                     treeId={treeId}

@@ -25,17 +25,19 @@ export default function TreeInfo({ availableSkillPoints, startingTree, data, set
                         ))}
                 </select>
             </div>
-            <div className="action-button">
-                <button onClick={() => TreeHelpers.ResetData(startingTree, data, setData)}>
-                    Reset
-                </button>
-            </div>
-            <div className="action-button">
-                <PunchCardExport
-                    skillData={skillData}
-                    unlockedTiers={unlockedTiers}
-                    skillPoints={availableSkillPoints}
-                />
+            <div className="button-wrapper">
+                <div className="action-button">
+                    <button onClick={() => TreeHelpers.ResetData(startingTree, data, setData)}>
+                        Reset
+                    </button>
+                </div>
+                <div className="action-button">
+                    <PunchCardExport
+                        skillData={skillData}
+                        unlockedTiers={unlockedTiers}
+                        skillPoints={availableSkillPoints}
+                    />
+                </div>
             </div>
         </div >
     );
