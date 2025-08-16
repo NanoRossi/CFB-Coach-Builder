@@ -25,6 +25,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Add CNAME file to public/ so it ends up in the build
+      - name: Add CNAME file
+        run: echo "www.cfb-coach-builder.com" > public/CNAME
+
       - name: Build React app
         run: CI=false npm run build
 
